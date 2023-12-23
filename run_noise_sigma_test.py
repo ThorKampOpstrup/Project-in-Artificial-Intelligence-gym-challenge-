@@ -16,7 +16,7 @@ k=3
 subdir = 'OU_noise_sigma'
 base_log_name = 'OU_noise_sigma_'
 #from 0.05 to 0.5 in steps of 0.05
-for i in np.arange(0.05, 0.5, 0.05):
+for i in np.arange(0.05, 0.5, 0.055):
     OU_noise_sigma = round(i, 2)
     # round to 2 decimals
     print('Running test for OU_noise_sigma = ' + str(OU_noise_sigma))
