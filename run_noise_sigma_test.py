@@ -24,13 +24,13 @@ for i in np.arange(0.05, 0.5, 0.055):
         log_name = base_log_name + str(OU_noise_sigma) + '_number_' + str(j)
         # Create the command
         print('Running test number ' + str(j))
-        command = [python_interpreter, 'iem-ppo.py', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--re3_k', str(k),'--it', '200', '--n_steps', '2048', '--OU_noise_sigma', str(OU_noise_sigma)]
-        subprocess.run(command)
+        # command = [python_interpreter, 'iem-ppo.py', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--re3_k', str(k),'--it', '200', '--n_steps', '2048', '--OU_noise_sigma', str(OU_noise_sigma)]
+        # subprocess.run(command)
         
-        #push to git
-        subprocess.run(['git', 'add', '-A'])
-        subprocess.run(['git', 'commit', '-m', 'Automated push: Test for OU_noise_sigma = ' + str(OU_noise_sigma) + ' number ' + str(j)])
-        subprocess.run(['git', 'push'])
+        # #push to git
+        # subprocess.run(['git', 'add', '-A'])
+        # subprocess.run(['git', 'commit', '-m', 'Automated push: Test for OU_noise_sigma = ' + str(OU_noise_sigma) + ' number ' + str(j)])
+        # subprocess.run(['git', 'push'])
         
 
 
