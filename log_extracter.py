@@ -83,6 +83,7 @@ if __name__=='__main__':
     for subdir, dirs, files in os.walk(args.log_dir):
         dir_name = os.path.basename(subdir)
         for file in files: #only one should exist
+            # print(os.path.join(subdir, file))
             extract_data_to_csv(os.path.join(subdir, file), dir_name, args.dst_dir)
             # exit()
         
