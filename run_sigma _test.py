@@ -16,7 +16,6 @@ base_log_name = 'sigma_'
 # # Run the test for different sigma values
 for j in range(number_of_equal_runs):
     # round to 2 decimals
-    print('Running test for sigma = ' + str(sigma))
     for i in np.arange(0.05, 0.51, 0.05):
         sigma = round(i, 2)
         log_name = base_log_name + str(sigma) + '_number_' + str(j)
