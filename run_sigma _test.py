@@ -28,7 +28,7 @@ for j in range(number_of_equal_runs):
             str_sigma += '0'
         log_name = base_log_name + str_sigma + '_number_' + str(j)
         # Create the command
-        print('sigma = ' + str(sigma) + ' number ' + str(j))
+        print('sigma = ' + str_sigma + ' number ' + str(j))
         # command = [python_interpreter, 'iem-ppo.py', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta)]
         # subprocess.run(command)
         
