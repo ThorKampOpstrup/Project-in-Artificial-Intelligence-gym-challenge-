@@ -80,7 +80,9 @@ class CustomCallback(BaseCallback):
         # Using Re3:
         if self.k:
             intrinsics = self.calculate_intrinsics()
+            # add intrinsic reward to rollout buffer
             self.model.rollout_buffer.rewards += intrinsics[:, :, 0]
+            # self.model.ep_info_buffer.reward += intrinsics[:, :, 0]
         self.current_it += 1
         # use ep_len_mean and the sum of Re3 rewards to get a mean Re3 rew!!!
         # Since the intrinsic reward might result in bad exploration and PPO having no memory of older rollouts, it could be beneficial to save the best model

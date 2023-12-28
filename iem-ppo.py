@@ -29,6 +29,9 @@ def def_args():
     parser.add_argument('--n_cores', type=int, default=32, help='Number of cores/environments')
     parser.add_argument('--n_steps', type=int, default=int(2024/(32/8)), help='Number of steps per core per rollout')
     parser.add_argument('--env_name', type=str, default='BipedalWalker-v3', help='Name of environment to train on')
+    parser.add_argument('--learning_rate', type=float, default=0.0003, help='Learning rate for the model')
+    parser.add_argument('--n_epochs', type=int, default=3, help='Number of epochs for the model')
+    
     
     parser.add_argument('--subdir', type=str, default='', help='Subdirectory to save model and logs in')
     
@@ -94,7 +97,7 @@ if __name__ == '__main__':
     env_fns = [lambda: Monitor(IEMWrapper(gym.make(env_name), iem_module, re3_module)) for _ in range(n_env)]
     env = SubprocVecEnv(env_fns)
     model = TRPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env)
-    # model = PPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=32, n_epochs=3, learning_rate=0.0003)
+    # model = PPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, n_epochs=3, learning_rate=0.0003)
     model.action_noise = action_noise
 
     IEMcallback = CustomCallback(iem=iem_module, re3=re3_module, k=args.re3_k)
