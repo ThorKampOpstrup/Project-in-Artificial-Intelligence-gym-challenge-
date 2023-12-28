@@ -12,6 +12,7 @@ iterations = 150
 number_of_equal_runs = 5
 
 python_interpreter = '/home/thops19/Documents/9semester/PPO-for-Beginners/venv/bin/python'
+path = '/home/thops19/Documents/9semester/Project-in-Artificial-Intelligence-gym-challenge-/'
 data_path = 'data'
 
 subdir = 'sigma_test'
@@ -30,7 +31,7 @@ for j in range(number_of_equal_runs):
         # Create the command
         print('sigma = ' + str_sigma + ' number ' + str(j))
         print(log_name)
-        command = [python_interpreter, 'iem-ppo.py', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta)]
+        command = [python_interpreter, path+'iem-ppo.py', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta)]
         print (command)
         subprocess.run(command)
         
