@@ -6,7 +6,7 @@ subprocess.run(['git', 'add', '-A'])
 subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma'])
 subprocess.run(['git', 'push'])
 
-theta = str(0.5)
+theta = str(1)
 iterations = str(150)
 
 number_of_equal_runs = 5
@@ -15,7 +15,7 @@ python_interpreter = '/home/thops19/Documents/9semester/PPO-for-Beginners/venv/b
 path = '/home/thops19/Documents/9semester/Project-in-Artificial-Intelligence-gym-challenge-/'
 data_path = 'data'
 
-subdir = 'sigma_test'
+subdir = 'sigma_test_theta' + theta
 base_log_name = 'sigma_'
 # # Run the test for different sigma values
 for j in range(number_of_equal_runs):
