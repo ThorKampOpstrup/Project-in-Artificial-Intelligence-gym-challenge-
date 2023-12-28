@@ -55,6 +55,23 @@ class CustomCallback(BaseCallback):
 
         return True
     
+    # def calculate_intrinsics(self):
+    #     rollout_buffer = self.model.rollout_buffer
+    #     # print(rollout_buffer.observations.shape[0])
+    #     n_steps = rollout_buffer.observations.shape[0]
+    #     n_envs = rollout_buffer.observations.shape[1]
+    #     intrinsic_rewards = np.zeros(shape=(n_steps, n_envs, 1))
+
+    #     observations = torch.from_numpy(rollout_buffer.observations)
+    #     with torch.no_grad():
+    #         for env in range(n_envs):
+    #             observation_feature = self.re3_module(observations[:, env])
+    #             distance = torch.linalg.vector_norm(observation_feature.unsqueeze(1) - observation_feature, ord=2, dim=2)
+    #             intrinsic_rewards[:, env, 0] = torch.log(torch.kthvalue(distance, self.k, dim=1).values + 1.0).cpu().numpy()
+        
+    #     self.beta = self.beta_start * (1 - self.decay_rate) ** self.current_it
+    #     return self.beta * intrinsic_rewards
+
     def calculate_intrinsics(self):
         rollout_buffer = self.model.rollout_buffer
         # print(rollout_buffer.observations.shape[0])
@@ -67,11 +84,19 @@ class CustomCallback(BaseCallback):
             for env in range(n_envs):
                 observation_feature = self.re3_module(observations[:, env])
                 distance = torch.linalg.vector_norm(observation_feature.unsqueeze(1) - observation_feature, ord=2, dim=2)
-                intrinsic_rewards[:, env, 0] = torch.log(torch.kthvalue(distance, self.k, dim=1).values + 1.0).cpu().numpy()
-        
-        self.beta = self.beta_start * (1 - self.decay_rate) ** self.current_it
-        return self.beta * intrinsic_rewards
+                
+                # Average the reward:
+                for sub_k in range(self.k):
+                    intrinsic_rewards[:, env, 0] += (torch.kthvalue(distance, sub_k + 1, dim=1).values + 1.).cpu().numpy()
+                intrinsic_rewards[:, env, 0] /= self.k
+                
+                # Dont average the reward:
+                #intrinsic_rewards[:, env, 0] = (torch.kthvalue(distance, self.k, dim=1).values + 1.0).cpu().numpy()
 
+        
+        # self.beta = self.beta_start * (1 - self.decay_rate) ** self.current_it
+        self.beta = 1.0
+        return self.beta * intrinsic_rewards
 
     def _on_rollout_end(self) -> None:
         """

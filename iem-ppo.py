@@ -32,6 +32,9 @@ def def_args():
     parser.add_argument('--learning_rate', type=float, default=0.0003, help='Learning rate for the model')
     parser.add_argument('--n_epochs', type=int, default=3, help='Number of epochs for the model')
     
+    parser.add_argument('--theta', type=float, help='Theta for PPO', required=True)
+    parser.add_argument('--sigma', type=float, help='Sigma for PPO', required=True)
+    
     
     parser.add_argument('--subdir', type=str, default='', help='Subdirectory to save model and logs in')
     
@@ -96,8 +99,8 @@ if __name__ == '__main__':
     env_name = args.env_name
     env_fns = [lambda: Monitor(IEMWrapper(gym.make(env_name), iem_module, re3_module)) for _ in range(n_env)]
     env = SubprocVecEnv(env_fns)
-    model = TRPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env)
-    # model = PPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, n_epochs=3, learning_rate=0.0003)
+    # model = TRPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env)
+    model = PPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, n_epochs=args.n_epochs, learning_rate=args.learning_rate, theta=args.theta, sigma=args.sigma)
     model.action_noise = action_noise
 
     IEMcallback = CustomCallback(iem=iem_module, re3=re3_module, k=args.re3_k)
