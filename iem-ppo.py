@@ -23,7 +23,7 @@ def def_args():
     
     parser = argparse.ArgumentParser(description='AI Project')
     
-    parser.add_argument('--re3_k', type=int, default=3, help='The k value for Re3, if 0 Re3 will not be used')
+    parser.add_argument('--re3_k', type=int, default=0, help='The k value for Re3, if 0 Re3 will not be used')
     parser.add_argument('--OU_noise_sigma', type=float, default=0.1, help='std-deviation for OrnsteinUhlenbeckActionNoise, if 0 regular gaussian noise will be used')
     parser.add_argument('--it', type=int, default=300, help='Number of desired iterations')
     parser.add_argument('--n_cores', type=int, default=32, help='Number of cores/environments')
@@ -32,9 +32,6 @@ def def_args():
     parser.add_argument('--learning_rate', type=float, default=0.0003, help='Learning rate for the model')
     parser.add_argument('--n_epochs', type=int, default=3, help='Number of epochs for the model')
     
-    parser.add_argument('--theta', type=float, help='Theta for PPO', required=True)
-    parser.add_argument('--sigma', type=float, help='Sigma for PPO', required=True)
-    
     
     parser.add_argument('--subdir', type=str, default='', help='Subdirectory to save model and logs in')
     
@@ -42,6 +39,8 @@ def def_args():
     requiredNamed = parser.add_argument_group('required named arguments')
     #required
     
+    parser.add_argument('--theta', default=1, type=float, help='Theta for PPO', required=True)
+    parser.add_argument('--sigma', default=0.1, type=float, help='Sigma for PPO', required=True)
     requiredNamed.add_argument('--path', type=str, default=None, help='Path to model to load', required=True)
     requiredNamed.add_argument('--log_name', type=str, default=None, help='Name of model to load', required=True)
     
@@ -99,6 +98,7 @@ if __name__ == '__main__':
     env_name = args.env_name
     env_fns = [lambda: Monitor(IEMWrapper(gym.make(env_name), iem_module, re3_module)) for _ in range(n_env)]
     env = SubprocVecEnv(env_fns)
+    
     # model = TRPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env)
     model = PPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, n_epochs=args.n_epochs, learning_rate=args.learning_rate, theta=args.theta, sigma=args.sigma)
     model.action_noise = action_noise
@@ -144,3 +144,5 @@ if __name__ == '__main__':
   ent_coef: 0.001
   learning_rate: lin_2.5e-4
   clip_range: lin_0.2'''
+  
+  #/home/thops19/Documents/9semester/PPO-for-Beginners/venv/bin/python /home/thops19/Documents/9semester/Project-in-Artificial-Intelligence-gym-challenge-/iem-ppo.py --path tmp/tmp --log_name sigma_0.01_theta_1 --sigma 0.1 --theta 1 --n_steps 2024
