@@ -6,8 +6,8 @@ subprocess.run(['git', 'add', '-A'])
 subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma'])
 subprocess.run(['git', 'push'])
 
-theta = 0.5
-iterations = 150
+theta = str(0.5)
+iterations = str(150)
 
 number_of_equal_runs = 5
 
@@ -35,7 +35,7 @@ for j in range(number_of_equal_runs):
         # command = [python_interpreter, path+'iem-ppo.py']
 
         # command = [python_interpreter, path+'test.py']
-        print (command)
+
         subprocess.run(command)
         
         #push to git
@@ -43,3 +43,6 @@ for j in range(number_of_equal_runs):
         subprocess.run(['git', 'add', '-A'])
         subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma = ' + str(sigma) + ' number ' + str(j)])
         subprocess.run(['git', 'push'])
+
+
+# ['/home/thops19/Documents/9semester/PPO-for-Beginners/venv/bin/python', '/home/thops19/Documents/9semester/Project-in-Artificial-Intelligence-gym-challenge-/iem-ppo.py', '--path', 'data', '--subdir', 'sigma_test', '--log_name', 'sigma_0.050_number_0', '--it', 150, '--n_steps 1024 --sigma  0.05 --theta 0.5
