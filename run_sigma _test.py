@@ -34,6 +34,7 @@ for j in range(number_of_equal_runs):
         subprocess.run(command)
         
         #push to git
+        subprocess.run(['git', 'pull'])
         subprocess.run(['git', 'add', '-A'])
         subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma = ' + str(sigma) + ' number ' + str(j)])
         subprocess.run(['git', 'push'])
