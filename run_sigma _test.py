@@ -20,7 +20,7 @@ for j in range(number_of_equal_runs):
         sigma = round(i, 2)
         log_name = base_log_name + str(sigma) + '_number_' + str(j)
         # Create the command
-        print('Running test number ' + log_name)
+        print('sigma = ' + str(sigma) + ' number ' + str(j))
         # command = [python_interpreter, 'iem-ppo.py', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', '200', '--n_steps', '2048', '--sigma', str(sigma)]
         # subprocess.run(command)
         
