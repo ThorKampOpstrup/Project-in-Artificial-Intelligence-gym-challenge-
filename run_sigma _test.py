@@ -29,7 +29,7 @@ for j in range(2,number_of_equal_runs):
             str_sigma += '0'
         log_name = base_log_name + str_sigma + '_number_' + str(j)
         # Create the command
-        print('sigma = ' + str_sigma + ' number ' + str(j))
+        # print('sigma = ' + str_sigma + ' number ' + str(j))
         print(log_name)
         command = [python_interpreter, path+'iem-ppo.py', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta)]
         # command = [python_interpreter, path+'iem-ppo.py']
@@ -63,7 +63,7 @@ for i in np.arange(0.125, 0.41, 0.025):
         str_sigma += '0'
     log_name = base_log_name + str_sigma + '_number_' + str(1)
     # Create the command
-    print('sigma = ' + str_sigma + ' number ' + str(1))
+    # print('sigma = ' + str_sigma + ' number ' + str(1))
     print(log_name)
     command = [python_interpreter, path+'iem-ppo.py', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta)]
     # command = [python_interpreter, path+'iem-ppo.py']
