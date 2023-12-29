@@ -21,7 +21,7 @@ base_log_name = 'sigma_'
 
 ###DELETE THIS AND CHANGE RANGE TO 0 TO RUMBER FO RUNS
 # round to 2 decimals
-for i in np.arange(0.125, 0.41, 0.025):
+for i in np.arange(0.150, 0.41, 0.025):
     sigma = round(i, 3)
     str_sigma = str(sigma) #add so 3 decimals are used
     while 1:
@@ -39,7 +39,7 @@ for i in np.arange(0.125, 0.41, 0.025):
     #push to git
     subprocess.run(['git', 'pull'])
     subprocess.run(['git', 'add', '-A'])
-    subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma = ' + str(sigma) + ' number ' + str(j)])
+    subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma = ' + str(sigma) + ' number ' + str(1)])
     subprocess.run(['git', 'push'])
 
 
