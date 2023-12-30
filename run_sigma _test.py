@@ -18,10 +18,12 @@ data_path = 'data'
 subdir = '_TRPO_sigma_test_theta_' + theta
 base_log_name = 'TRPO_sigma_'
 
+sigma_test =[0.01, 0.02, 0.05, 0.1, 0.2]
+
 # # Run the test for different sigma values
 for j in range(0,number_of_equal_runs):
     # round to 2 decimals
-    for i in np.arange(0.00, 0.2, 0.05):
+    for i in sigma_test:
         sigma = round(i, 3)
         str_sigma = str(sigma) #add so 3 decimals are used
         while 1:
