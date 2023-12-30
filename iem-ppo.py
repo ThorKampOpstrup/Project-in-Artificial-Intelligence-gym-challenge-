@@ -99,7 +99,7 @@ if __name__ == '__main__':
     env_fns = [lambda: Monitor(IEMWrapper(gym.make(env_name), iem_module, re3_module)) for _ in range(n_env)]
     env = SubprocVecEnv(env_fns)
     
-    model = TRPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, theta=args.theta, sigma=args.sigma, learning_rate=args.learning_rate)
+    model = TRPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, theta=args.theta, sigma=args.sigma)
     # model = PPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, n_epochs=args.n_epochs, learning_rate=args.learning_rate, theta=args.theta, sigma=args.sigma)
     model.action_noise = action_noise
 
