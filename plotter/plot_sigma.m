@@ -23,6 +23,12 @@ train_value_loss = 18;
 
 path = "data_cpy/csv/sigma_test_theta1";
 
+sigma_000_number_0 = readmatrix(strcat(path, "/sigma_0.000_number_0.csv"));
+sigma_000_number_1 = readmatrix(strcat(path, "/sigma_0.000_number_1.csv"));
+sigma_000_number_2 = readmatrix(strcat(path, "/sigma_0.000_number_2.csv"));
+sigma_000_number_3 = readmatrix(strcat(path, "/sigma_0.000_number_3.csv"));
+sigma_000_number_4 = readmatrix(strcat(path, "/sigma_0.000_number_4.csv"));
+
 sigma_050_number_0 = readmatrix(strcat(path, "/sigma_0.050_number_0.csv"));
 sigma_050_number_1 = readmatrix(strcat(path, "/sigma_0.050_number_1.csv"));
 sigma_050_number_2 = readmatrix(strcat(path, "/sigma_0.050_number_2.csv"));
@@ -114,6 +120,12 @@ sigma_400_number_3 = readmatrix(strcat(path, "/sigma_0.400_number_3.csv"));
 sigma_400_number_4 = readmatrix(strcat(path, "/sigma_0.400_number_4.csv"));
 
 %delete the first row of all
+sigma_000_number_0(1,:) = [];
+sigma_000_number_1(1,:) = [];
+sigma_000_number_2(1,:) = [];
+sigma_000_number_3(1,:) = [];
+sigma_000_number_4(1,:) = [];
+
 sigma_050_number_0(1,:) = [];
 sigma_050_number_1(1,:) = [];
 sigma_050_number_2(1,:) = [];
@@ -205,6 +217,7 @@ sigma_400_number_3(1,:) = [];
 sigma_400_number_4(1,:) = [];
 
 %take average of all similar runs
+sigma_000_avg = (sigma_000_number_0 + sigma_000_number_1 + sigma_000_number_2 + sigma_000_number_3 + sigma_000_number_4)/number_of_evals;
 sigma_050_avg = (sigma_050_number_0 + sigma_050_number_1 + sigma_050_number_2 + sigma_050_number_3 + sigma_050_number_4)/number_of_evals;
 sigma_075_avg = (sigma_075_number_0 + sigma_075_number_1 + sigma_075_number_2 + sigma_075_number_3 + sigma_075_number_4)/number_of_evals;
 sigma_100_avg = (sigma_100_number_0 + sigma_100_number_1 + sigma_100_number_2 + sigma_100_number_3 + sigma_100_number_4)/number_of_evals;
@@ -226,6 +239,7 @@ iterations_vec = [1:1:rows];
 
 figure(1);
 hold on;
+plot(iterations_vec, sigma_000_avg(:,train_mean_evaluation_reward), 'LineWidth', 1.5);
 plot(iterations_vec, sigma_050_avg(:,train_mean_evaluation_reward), 'LineWidth', 1);
 plot(iterations_vec, sigma_075_avg(:,train_mean_evaluation_reward), 'LineWidth', 1);
 plot(iterations_vec, sigma_100_avg(:,train_mean_evaluation_reward), 'LineWidth', 1);
@@ -242,7 +256,7 @@ plot(iterations_vec, sigma_350_avg(:,train_mean_evaluation_reward), '--', 'LineW
 plot(iterations_vec, sigma_375_avg(:,train_mean_evaluation_reward), '--', 'LineWidth', 1);
 plot(iterations_vec, sigma_400_avg(:,train_mean_evaluation_reward), '--', 'LineWidth', 1);
 
-legend('sigma 0.050', 'sigma 0.075', 'sigma 0.100', 'sigma 0.125', 'sigma 0.150', 'sigma 0.175', 'sigma 0.200', 'sigma 0.225', 'sigma 0.250', 'sigma 0.275', 'sigma 0.300', 'sigma 0.325', 'sigma 0.350', 'sigma 0.375', 'sigma 0.400');
+legend('sigma 0.000', 'sigma 0.050', 'sigma 0.075', 'sigma 0.100', 'sigma 0.125', 'sigma 0.150', 'sigma 0.175', 'sigma 0.200', 'sigma 0.225', 'sigma 0.250', 'sigma 0.275', 'sigma 0.300', 'sigma 0.325', 'sigma 0.350', 'sigma 0.375', 'sigma 0.400');
 xlabel('iterations');
 ylabel('mean evaluation reward');
 title('Mean evaluation reward for different sigmas theta 1');
