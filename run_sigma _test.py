@@ -18,6 +18,12 @@ data_path = 'data'
 subdir = 'TRPO_sigma_test_theta_' + theta
 base_log_name = 'TRPO_sigma_'
 
+log_name = base_log_name + 'test' + '_number_' + str(0)
+command = [python_interpreter, path+'iem-ppo.py', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(0.01), '--theta', str(theta)]
+
+subprocess.run(command)
+
+
 sigma_test =[0.01, 0.02, 0.05, 0.1, 0.2]
 
 # # Run the test for different sigma values
