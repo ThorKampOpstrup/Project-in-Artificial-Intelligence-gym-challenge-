@@ -15,7 +15,7 @@ python_interpreter = '/home/thops19/Documents/9semester/PPO-for-Beginners/venv/b
 path = '/home/thops19/Documents/9semester/Project-in-Artificial-Intelligence-gym-challenge-/'
 data_path = 'data'
 
-subdir = '_TRPO_sigma_test_theta_' + theta
+subdir = 'TRPO_sigma_test_theta_' + theta
 base_log_name = 'TRPO_sigma_'
 
 sigma_test =[0.01, 0.02, 0.05, 0.1, 0.2]
