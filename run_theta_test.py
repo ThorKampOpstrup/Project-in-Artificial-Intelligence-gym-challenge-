@@ -9,7 +9,6 @@ subprocess.run(['git', 'push'])
 print('Running theta test')
 sigma = str(0.05)
 iterations = str(150)
-print('sigma = ' + sigma)
 
 number_of_equal_runs = 5
 
@@ -24,6 +23,7 @@ theta_test =[0.1, 0.2, 0.5, 1.0, 2.0, 3.0, 5.0]
 
 # # Run the test for different sigma values
 for j in range(0,number_of_equal_runs):
+    print('Running test number ' + str(j))
     # round to 2 decimals
     for i in theta_test:
         theta = round(i, 3)
