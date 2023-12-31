@@ -34,6 +34,8 @@ def def_args():
     
     
     parser.add_argument('--subdir', type=str, default='', help='Subdirectory to save model and logs in')
+    parser.add_argument('--use_ppo', type=bool, default=False, help='Use PPO instead of TRPO')
+    parser.add_argument('--use_trpo', type=bool, default=False, help='Use TRPO instead of PPO')
     
     #check if folder and name are given, if not, terminate with error
     requiredNamed = parser.add_argument_group('required named arguments')
@@ -49,6 +51,16 @@ def def_args():
 
 if __name__ == '__main__':
     args = def_args()
+    if args.use_ppo and args.use_trpo:
+        raise Exception("Can't use both PPO and TRPO")
+    if not args.use_ppo and not args.use_trpo:
+        raise Exception("Must use either PPO or TRPO")
+    if args.use_ppo:
+        print("Using PPO")
+        type = 'PPO'
+    if args.use_trpo:
+        print("Using TRPO")
+        type = 'TRPO'
     
     # Create folders
     # dir = "BipedalWalker-v3-iem-ppo"
@@ -99,8 +111,10 @@ if __name__ == '__main__':
     env_fns = [lambda: Monitor(IEMWrapper(gym.make(env_name), iem_module, re3_module)) for _ in range(n_env)]
     env = SubprocVecEnv(env_fns)
     
-    model = TRPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, theta=args.theta, sigma=args.sigma)
-    # model = PPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, n_epochs=args.n_epochs, learning_rate=args.learning_rate, theta=args.theta, sigma=args.sigma)
+    if type == 'PPO':
+        model = PPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, n_epochs=args.n_epochs, learning_rate=args.learning_rate, theta=args.theta, sigma=args.sigma)
+    if type == 'TRPO':
+        model = TRPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, theta=args.theta, sigma=args.sigma)
     model.action_noise = action_noise
 
     IEMcallback = CustomCallback(iem=iem_module, re3=re3_module, k=args.re3_k)
