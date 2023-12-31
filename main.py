@@ -54,7 +54,7 @@ if __name__ == '__main__':
     if args.use_ppo and args.use_trpo:
         raise Exception("Can't use both PPO and TRPO")
     if not args.use_ppo and not args.use_trpo:
-        raise Exception("Must use either PPO or TRPO")
+        raise Exception("Must use either --use_ppo or use_--use_trpo")
     if args.use_ppo:
         print("Using PPO")
         type = 'PPO'
