@@ -27,7 +27,7 @@ for j in range(0,number_of_equal_runs):
         theta = round(i, 3)
         str_theta = str(theta) #add so 3 decimals are used
         while 1:
-            if len(str_theta) == 5:
+            if len(str_theta) == 2:
                 break
             str_theta += '0'
         log_name = base_log_name + str_theta + '_number_' + str(j)
