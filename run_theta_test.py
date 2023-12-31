@@ -6,7 +6,7 @@ subprocess.run(['git', 'add', '-A'])
 subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma'])
 subprocess.run(['git', 'push'])
 
-sigma = str(0.1)
+sigma = str(0.05)
 iterations = str(150)
 
 number_of_equal_runs = 5
@@ -18,7 +18,7 @@ data_path = 'data'
 subdir = 'TRPO_theta_test_sigma_' + sigma
 base_log_name = 'TRPO_theta_'
 
-theta_test =[0.1, 0.2, 0.5, 1, 2, 3, 5]
+theta_test =[0.1, 0.2, 0.5, 1.0, 2.0, 3.0, 5.0]
 
 # # Run the test for different sigma values
 for j in range(0,number_of_equal_runs):
