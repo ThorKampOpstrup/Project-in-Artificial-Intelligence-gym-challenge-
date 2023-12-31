@@ -23,13 +23,12 @@ theta_test =[0.1, 0.2, 0.5, 1.0, 2.0, 3.0, 5.0]
 
 # # Run the test for different sigma values
 for j in range(0,number_of_equal_runs):
-    print('Running test number ' + str(j))
     # round to 2 decimals
     for i in theta_test:
         theta = round(i, 3)
         str_theta = str(theta) #add so 3 decimals are used
         while 1:
-            if len(str_theta) == 2:
+            if len(str_theta) == 3:
                 break
             str_theta += '0'
         log_name = base_log_name + str_theta + '_number_' + str(j)
@@ -58,7 +57,7 @@ for j in range(0,number_of_equal_runs):
         theta = round(i, 3)
         str_theta = str(theta) #add so 3 decimals are used
         while 1:
-            if len(str_theta) == 2:
+            if len(str_theta) == 3:
                 break
             str_theta += '0'
         log_name = base_log_name + str_theta + '_number_' + str(j)
