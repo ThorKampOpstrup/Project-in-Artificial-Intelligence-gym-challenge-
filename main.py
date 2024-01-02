@@ -24,7 +24,7 @@ def def_args():
     parser = argparse.ArgumentParser(description='AI Project')
     
     parser.add_argument('--re3_k', type=int, default=0, help='The k value for Re3, if 0 Re3 will not be used')
-    parser.add_argument('--OU_noise_sigma', type=float, default=0.1, help='std-deviation for OrnsteinUhlenbeckActionNoise, if 0 regular gaussian noise will be used')
+    # parser.add_argument('--OU_noise_sigma', type=float, default=0.1, help='std-deviation for OrnsteinUhlenbeckActionNoise, if 0 regular gaussian noise will be used')
     parser.add_argument('--it', type=int, default=300, help='Number of desired iterations')
     parser.add_argument('--n_cores', type=int, default=32, help='Number of cores/environments')
     parser.add_argument('--n_steps', type=int, default=int(2024/(32/8)), help='Number of steps per core per rollout')
@@ -77,10 +77,10 @@ if __name__ == '__main__':
     env = gym.make(env_name)
     obs_space = env.observation_space.shape[0]
     n_actions = env.action_space.shape[-1]
-    OU_noise_sigma = args.OU_noise_sigma
+    OU_noise_sigma = args.sigma
     
     if OU_noise_sigma != 0:
-        print("Using OU Noise, the sigma value is: " + str(args.sigma) + " the theta value is: " + str(args.theta) + " the learning rate is: " + str(args.learning_rate))
+        print("Using OU Noise, the sigma value is: " + str(args.sigma) + " the theta value is: " + str(args.theta))
         action_noise = OrnsteinUhlenbeckActionNoise(mean=np.zeros(n_actions), sigma=OU_noise_sigma * np.ones(n_actions))
     else:
         print("Using Gaussian Noise")
