@@ -1,4 +1,4 @@
-
+clear;
 
 
 % define column descriptors
