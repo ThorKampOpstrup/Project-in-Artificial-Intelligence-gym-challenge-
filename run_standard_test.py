@@ -17,7 +17,7 @@ path = '/home/thops19/Documents/9semester/Project-in-Artificial-Intelligence-gym
 data_path = 'data'
 
 subdir = 'PPO_standard_test'
-base_log_name = 'PPO_standard_'
+base_log_name = 'PPO_standard'
 # # Run the test for different sigma values
 for j in range(0,number_of_equal_runs):
     log_name = base_log_name + '_number_' + str(j)
@@ -33,7 +33,7 @@ for j in range(0,number_of_equal_runs):
     # subprocess.run(['git', 'push'])
 
 subdir = 'TRPO_standard_test'
-base_log_name = 'TRPO_standard_'
+base_log_name = 'TRPO_standard'
 
 for j in range(0,number_of_equal_runs):
     log_name = base_log_name + '_number_' + str(j)
