@@ -81,10 +81,9 @@ if __name__ == '__main__':
     
     if OU_noise_sigma != 0:
         print("Using OU Noise, the sigma value is: " + str(args.sigma) + " the theta value is: " + str(args.theta))
-        action_noise = OrnsteinUhlenbeckActionNoise(mean=np.zeros(n_actions), sigma=OU_noise_sigma * np.ones(n_actions))
     else:
         print("Using Gaussian Noise")
-        action_noise = NormalActionNoise(mean=np.zeros(n_actions), sigma=0.1 * np.ones(n_actions))
+        
     if args.re3_k:
         print("Using Re3")
     env.close()
@@ -115,7 +114,6 @@ if __name__ == '__main__':
         model = PPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, n_epochs=args.n_epochs, theta=args.theta, sigma=args.sigma)
     if type == 'TRPO':
         model = TRPO('MlpPolicy', env, verbose=1, tensorboard_log=log_dir, n_steps=n_steps_per_core, batch_size=n_env, theta=args.theta, sigma=args.sigma)
-    model.action_noise = action_noise
 
     IEMcallback = CustomCallback(iem=iem_module, re3=re3_module, k=args.re3_k)
     
