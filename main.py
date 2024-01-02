@@ -80,7 +80,7 @@ if __name__ == '__main__':
     OU_noise_sigma = args.OU_noise_sigma
     
     if OU_noise_sigma != 0:
-        print("Using OU Noise")
+        print("Using OU Noise, the sigma value is: " + str(args.sigma) + " the theta value is: " + str(args.theta) + " the learning rate is: " + str(args.learning_rate))
         action_noise = OrnsteinUhlenbeckActionNoise(mean=np.zeros(n_actions), sigma=OU_noise_sigma * np.ones(n_actions))
     else:
         print("Using Gaussian Noise")
