@@ -79,7 +79,7 @@ if __name__ == '__main__':
     n_actions = env.action_space.shape[-1]
     OU_noise_sigma = args.OU_noise_sigma
     
-    if OU_noise_sigma:
+    if OU_noise_sigma != 0:
         print("Using OU Noise")
         action_noise = OrnsteinUhlenbeckActionNoise(mean=np.zeros(n_actions), sigma=OU_noise_sigma * np.ones(n_actions))
     else:
