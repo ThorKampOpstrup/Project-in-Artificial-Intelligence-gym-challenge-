@@ -6,8 +6,8 @@ subprocess.run(['git', 'add', '-A'])
 subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma'])
 subprocess.run(['git', 'push'])
 
-theta = str(1)
-sigma = str(1)
+theta = str(0)
+sigma = str(0)
 iterations = str(150)
 
 number_of_equal_runs = 20
