@@ -10,7 +10,7 @@ theta = str(0)
 sigma = str(0.00)
 iterations = str(150)
 
-number_of_equal_runs = 10
+number_of_equal_runs = 20
 
 python_interpreter = '/home/thops19/Documents/9semester/PPO-for-Beginners/venv/bin/python'
 path = '/home/thops19/Documents/9semester/Project-in-Artificial-Intelligence-gym-challenge-/'
