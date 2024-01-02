@@ -34,7 +34,7 @@ for j in range(0,number_of_equal_runs):
         # Create the command
         # print('sigma = ' + str_sigma + ' number ' + str(j))
         print(log_name)
-        command = [python_interpreter, path+'main.py', '--use_ppo', 'True' '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta)]
+        command = [python_interpreter, path+'main.py', '--use_ppo', 'True', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta)]
 
         subprocess.run(command)
         

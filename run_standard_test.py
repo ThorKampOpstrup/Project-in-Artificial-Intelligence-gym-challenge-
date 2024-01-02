@@ -22,7 +22,7 @@ base_log_name = 'PPO_standard'
 for j in range(0,number_of_equal_runs):
     log_name = base_log_name + '_number_' + str(j)
     print(log_name)
-    command = [python_interpreter, path+'main.py', '--use_ppo', 'True' '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta)]
+    command = [python_interpreter, path+'main.py', '--use_ppo', 'True', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta)]
 
     subprocess.run(command)
     
@@ -38,7 +38,7 @@ base_log_name = 'TRPO_standard'
 for j in range(0,number_of_equal_runs):
     log_name = base_log_name + '_number_' + str(j)
     print(log_name)
-    command = [python_interpreter, path+'main.py', '--use_ppo', 'True' '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta)]
+    command = [python_interpreter, path+'main.py', '--use_ppo', 'True', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta)]
 
     subprocess.run(command)
     
