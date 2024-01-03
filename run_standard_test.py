@@ -33,7 +33,7 @@ base_log_name = 'PPO_standard'
 #     subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma = ' + str(sigma) + ' number ' + str(j)])
 #     subprocess.run(['git', 'push'])
     
-# base_log_name = 'TRPO_standard'
+base_log_name = 'TRPO_standard'
 
 for j in range(0,number_of_equal_runs):
     log_name = base_log_name + '_number_' + str(j)
