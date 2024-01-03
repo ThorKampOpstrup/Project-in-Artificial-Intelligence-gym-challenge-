@@ -22,7 +22,7 @@ plot(first_collum, OU_noise_theta_3_sigma_1(:,2), 'LineWidth', 1);
 % plot(first_collum, OU_noise_theta_3_sigma_01(:,2), 'LineWidth', 2);
 legend('theta 1 sigma 1', 'theta 0.1 sigma 1', 'theta 1 sigma 0.1', 'theta 0.1 sigma 0.1', 'theta 3 sigma 1');
 title('Ornstein-Uhlenbeck example noise');
-xlim([0 1000]);
+xlim([0 300]);
 xlabel('Sample');
 ylabel('Noise');
 hold off;
