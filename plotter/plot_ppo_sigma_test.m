@@ -120,101 +120,86 @@ sigma_400_number_3 = readmatrix(strcat(path, "/sigma_0.400_number_3.csv"));
 sigma_400_number_4 = readmatrix(strcat(path, "/sigma_0.400_number_4.csv"));
 
 %delete the first row of all
-sigma_000_number_0(1,:) = [];
-sigma_000_number_1(1,:) = [];
-sigma_000_number_2(1,:) = [];
-sigma_000_number_3(1,:) = [];
-sigma_000_number_4(1,:) = [];
-
-sigma_050_number_0(1,:) = [];
-sigma_050_number_1(1,:) = [];
-sigma_050_number_2(1,:) = [];
-sigma_050_number_3(1,:) = [];
-sigma_050_number_4(1,:) = [];
-
-sigma_075_number_0(1,:) = [];
-sigma_075_number_1(1,:) = [];
-sigma_075_number_2(1,:) = [];
-sigma_075_number_3(1,:) = [];
-sigma_075_number_4(1,:) = [];
-
-sigma_100_number_0(1,:) = [];
-sigma_100_number_1(1,:) = [];
-sigma_100_number_2(1,:) = [];
-sigma_100_number_3(1,:) = [];
-sigma_100_number_4(1,:) = [];
-
-sigma_125_number_0(1,:) = [];
-sigma_125_number_1(1,:) = [];
-sigma_125_number_2(1,:) = [];
-sigma_125_number_3(1,:) = [];
-sigma_125_number_4(1,:) = [];
-
-sigma_150_number_0(1,:) = [];
-sigma_150_number_1(1,:) = [];
-sigma_150_number_2(1,:) = [];
-sigma_150_number_3(1,:) = [];
-sigma_150_number_4(1,:) = [];
-
-sigma_175_number_0(1,:) = [];
-sigma_175_number_1(1,:) = [];
-sigma_175_number_2(1,:) = [];
-sigma_175_number_3(1,:) = [];
-sigma_175_number_4(1,:) = [];
-
-sigma_200_number_0(1,:) = [];
-sigma_200_number_1(1,:) = [];
-sigma_200_number_2(1,:) = [];
-sigma_200_number_3(1,:) = [];
-sigma_200_number_4(1,:) = [];
-
-sigma_225_number_0(1,:) = [];
-sigma_225_number_1(1,:) = [];
-sigma_225_number_2(1,:) = [];
-sigma_225_number_3(1,:) = [];
-sigma_225_number_4(1,:) = [];
-
-sigma_250_number_0(1,:) = [];
-sigma_250_number_1(1,:) = [];
-sigma_250_number_2(1,:) = [];
-sigma_250_number_3(1,:) = [];
-sigma_250_number_4(1,:) = [];
-
-sigma_275_number_0(1,:) = [];
-sigma_275_number_1(1,:) = [];
-sigma_275_number_2(1,:) = [];
-sigma_275_number_3(1,:) = [];
-sigma_275_number_4(1,:) = [];
-
-sigma_300_number_0(1,:) = [];
-sigma_300_number_1(1,:) = [];
-sigma_300_number_2(1,:) = [];
-sigma_300_number_3(1,:) = [];
-sigma_300_number_4(1,:) = [];
-
-sigma_325_number_0(1,:) = [];
-sigma_325_number_1(1,:) = [];
-sigma_325_number_2(1,:) = [];
-sigma_325_number_3(1,:) = [];
-sigma_325_number_4(1,:) = [];
-
-sigma_350_number_0(1,:) = [];
-sigma_350_number_1(1,:) = [];
-sigma_350_number_2(1,:) = [];
-sigma_350_number_3(1,:) = [];
-sigma_350_number_4(1,:) = [];
-
-sigma_375_number_0(1,:) = [];
-sigma_375_number_1(1,:) = [];
-sigma_375_number_2(1,:) = [];
-sigma_375_number_3(1,:) = [];
-sigma_375_number_4(1,:) = [];
-
-sigma_400_number_0(1,:) = [];
-sigma_400_number_1(1,:) = [];
-sigma_400_number_2(1,:) = [];
-sigma_400_number_3(1,:) = [];
-sigma_400_number_4(1,:) = [];
+% sigma_000_number_0(1,:) = [];
+% sigma_000_number_1(1,:) = [];
+% sigma_000_number_2(1,:) = [];
+% sigma_000_number_3(1,:) = [];
+% sigma_000_number_4(1,:) = [];
+% sigma_050_number_0(1,:) = [];
+% sigma_050_number_1(1,:) = [];
+% sigma_050_number_2(1,:) = [];
+% sigma_050_number_3(1,:) = [];
+% sigma_050_number_4(1,:) = [];
+% sigma_075_number_0(1,:) = [];
+% sigma_075_number_1(1,:) = [];
+% sigma_075_number_2(1,:) = [];
+% sigma_075_number_3(1,:) = [];
+% sigma_075_number_4(1,:) = [];
+% sigma_100_number_0(1,:) = [];
+% sigma_100_number_1(1,:) = [];
+% sigma_100_number_2(1,:) = [];
+% sigma_100_number_3(1,:) = [];
+% sigma_100_number_4(1,:) = [];
+% sigma_125_number_0(1,:) = [];
+% sigma_125_number_1(1,:) = [];
+% sigma_125_number_2(1,:) = [];
+% sigma_125_number_3(1,:) = [];
+% sigma_125_number_4(1,:) = [];
+% sigma_150_number_0(1,:) = [];
+% sigma_150_number_1(1,:) = [];
+% sigma_150_number_2(1,:) = [];
+% sigma_150_number_3(1,:) = [];
+% sigma_150_number_4(1,:) = [];
+% sigma_175_number_0(1,:) = [];
+% sigma_175_number_1(1,:) = [];
+% sigma_175_number_2(1,:) = [];
+% sigma_175_number_3(1,:) = [];
+% sigma_175_number_4(1,:) = [];
+% sigma_200_number_0(1,:) = [];
+% sigma_200_number_1(1,:) = [];
+% sigma_200_number_2(1,:) = [];
+% sigma_200_number_3(1,:) = [];
+% sigma_200_number_4(1,:) = [];
+% sigma_225_number_0(1,:) = [];
+% sigma_225_number_1(1,:) = [];
+% sigma_225_number_2(1,:) = [];
+% sigma_225_number_3(1,:) = [];
+% sigma_225_number_4(1,:) = [];
+% sigma_250_number_0(1,:) = [];
+% sigma_250_number_1(1,:) = [];
+% sigma_250_number_2(1,:) = [];
+% sigma_250_number_3(1,:) = [];
+% sigma_250_number_4(1,:) = [];
+% sigma_275_number_0(1,:) = [];
+% sigma_275_number_1(1,:) = [];
+% sigma_275_number_2(1,:) = [];
+% sigma_275_number_3(1,:) = [];
+% sigma_275_number_4(1,:) = [];
+% sigma_300_number_0(1,:) = [];
+% sigma_300_number_1(1,:) = [];
+% sigma_300_number_2(1,:) = [];
+% sigma_300_number_3(1,:) = [];
+% sigma_300_number_4(1,:) = [];
+% sigma_325_number_0(1,:) = [];
+% sigma_325_number_1(1,:) = [];
+% sigma_325_number_2(1,:) = [];
+% sigma_325_number_3(1,:) = [];
+% sigma_325_number_4(1,:) = []; 
+% sigma_350_number_0(1,:) = [];
+% sigma_350_number_1(1,:) = [];
+% sigma_350_number_2(1,:) = [];
+% sigma_350_number_3(1,:) = [];
+% sigma_350_number_4(1,:) = [];
+% sigma_375_number_0(1,:) = [];
+% sigma_375_number_1(1,:) = [];
+% sigma_375_number_2(1,:) = [];
+% sigma_375_number_3(1,:) = [];
+% sigma_375_number_4(1,:) = [];
+% sigma_400_number_0(1,:) = [];
+% sigma_400_number_1(1,:) = [];
+% sigma_400_number_2(1,:) = [];
+% sigma_400_number_3(1,:) = [];
+% sigma_400_number_4(1,:) = [];
 
 %take average of all similar runs
 sigma_000_avg = (sigma_000_number_0 + sigma_000_number_1 + sigma_000_number_2 + sigma_000_number_3 + sigma_000_number_4)/number_of_evals;
@@ -234,12 +219,16 @@ sigma_350_avg = (sigma_350_number_0 + sigma_350_number_1 + sigma_350_number_2 + 
 sigma_375_avg = (sigma_375_number_0 + sigma_375_number_1 + sigma_375_number_2 + sigma_375_number_3 + sigma_375_number_4)/number_of_evals;
 sigma_400_avg = (sigma_400_number_0 + sigma_400_number_1 + sigma_400_number_2 + sigma_400_number_3 + sigma_400_number_4)/number_of_evals;
 
+load_avg_standard_ppo;
+
 rows = size(sigma_050_avg, 1);
 iterations_vec = [1:1:rows];
 
 figure(1);
 hold on;
 increments = 1/16;
+plot(iterations_vec, PPO_standad_avg(:,train_mean_evaluation_reward), 'Color', [0, 0, 1], 'LineWidth', 2);
+
 plot(iterations_vec, sigma_000_avg(:,train_mean_evaluation_reward), 'Color', [0+(1*increments), 1-(1*increments), 0], 'LineWidth', 2);
 plot(iterations_vec, sigma_050_avg(:,train_mean_evaluation_reward), 'Color', [0+(2*increments), 1-(2*increments), 0], 'LineWidth', 1);
 plot(iterations_vec, sigma_075_avg(:,train_mean_evaluation_reward), 'Color', [0+(3*increments), 1-(3*increments), 0], 'LineWidth', 1);
@@ -257,7 +246,7 @@ plot(iterations_vec, sigma_350_avg(:,train_mean_evaluation_reward), 'Color', [0+
 plot(iterations_vec, sigma_375_avg(:,train_mean_evaluation_reward), 'Color', [0+(15*increments), 1-(15*increments), 0], 'LineWidth', 1);
 plot(iterations_vec, sigma_400_avg(:,train_mean_evaluation_reward), 'Color', [0+(16*increments), 1-(16*increments), 0], 'LineWidth', 1);
 
-legend('sigma 0.000', 'sigma 0.050', 'sigma 0.075', 'sigma 0.100', 'sigma 0.125', 'sigma 0.150', 'sigma 0.175', 'sigma 0.200', 'sigma 0.225', 'sigma 0.250', 'sigma 0.275', 'sigma 0.300', 'sigma 0.325', 'sigma 0.350', 'sigma 0.375', 'sigma 0.400');
+legend('standard', 'sigma 0.000', 'sigma 0.050', 'sigma 0.075', 'sigma 0.100', 'sigma 0.125', 'sigma 0.150', 'sigma 0.175', 'sigma 0.200', 'sigma 0.225', 'sigma 0.250', 'sigma 0.275', 'sigma 0.300', 'sigma 0.325', 'sigma 0.350', 'sigma 0.375', 'sigma 0.400');
 xlabel('iterations');
 ylabel('mean evaluation reward');
 title('Mean evaluation reward in PPO for different sigmas theta 1');
