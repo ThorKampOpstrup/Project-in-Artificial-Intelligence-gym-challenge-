@@ -124,3 +124,15 @@ TRPO_sigma_005_first_300_lowest = min(TRPO_sigma_005_first_300)
 TRPO_sigma_010_first_300_lowest = min(TRPO_sigma_010_first_300)
 TRPO_sigma_020_first_300_lowest = min(TRPO_sigma_020_first_300)
 
+hold on;
+figure(2);
+%make bar plot of all first_300_mean and first_300_lowest
+xticks_vec = ["0.01" "0.02" "0.05" "0.1" "0.2"];
+bar(xticks_vec, [TRPO_sigma_001_first_300_mean, TRPO_sigma_002_first_300_mean, TRPO_sigma_005_first_300_mean, TRPO_sigma_010_first_300_mean, TRPO_sigma_020_first_300_mean; TRPO_sigma_001_first_300_lowest, TRPO_sigma_002_first_300_lowest, TRPO_sigma_005_first_300_lowest, TRPO_sigma_010_first_300_lowest, TRPO_sigma_020_first_300_lowest]);
+title('TRPO: Iteration to get reward of 300 vs Sigma');
+subtitle('Mean and lowest of 5 runs theta=1')
+legend('Mean', 'Lowest');
+xlabel('Sigma');
+ylabel('Iteration');
+hold off;
+

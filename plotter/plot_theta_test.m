@@ -1,5 +1,4 @@
-clear;
-
+addpath('plotter/');
 number_of_evals = 5;
 
 % define column descriptors TRPO
@@ -105,17 +104,17 @@ PPO_theta_05_number_2 = readmatrix(strcat(PPO_path, "/PPO_theta_0.5_number_2.csv
 PPO_theta_05_number_3 = readmatrix(strcat(PPO_path, "/PPO_theta_0.5_number_3.csv"));
 PPO_theta_05_number_4 = readmatrix(strcat(PPO_path, "/PPO_theta_0.5_number_4.csv"));
 
-PPO_theta_3_number_0 = readmatrix(strcat(PPO_path, "/PPO_theta_3.0_number_0.csv"));
-PPO_theta_3_number_1 = readmatrix(strcat(PPO_path, "/PPO_theta_3.0_number_1.csv"));
-PPO_theta_3_number_2 = readmatrix(strcat(PPO_path, "/PPO_theta_3.0_number_2.csv"));
-PPO_theta_3_number_3 = readmatrix(strcat(PPO_path, "/PPO_theta_3.0_number_3.csv"));
-PPO_theta_3_number_4 = readmatrix(strcat(PPO_path, "/PPO_theta_3.0_number_4.csv"));
-
 PPO_theta_1_number_0 = readmatrix(strcat(PPO_path, "/PPO_theta_1.0_number_0.csv"));
 PPO_theta_1_number_1 = readmatrix(strcat(PPO_path, "/PPO_theta_1.0_number_1.csv"));
 PPO_theta_1_number_2 = readmatrix(strcat(PPO_path, "/PPO_theta_1.0_number_2.csv"));
 PPO_theta_1_number_3 = readmatrix(strcat(PPO_path, "/PPO_theta_1.0_number_3.csv"));
 PPO_theta_1_number_4 = readmatrix(strcat(PPO_path, "/PPO_theta_1.0_number_4.csv"));
+
+PPO_theta_3_number_0 = readmatrix(strcat(PPO_path, "/PPO_theta_3.0_number_0.csv"));
+PPO_theta_3_number_1 = readmatrix(strcat(PPO_path, "/PPO_theta_3.0_number_1.csv"));
+PPO_theta_3_number_2 = readmatrix(strcat(PPO_path, "/PPO_theta_3.0_number_2.csv"));
+PPO_theta_3_number_3 = readmatrix(strcat(PPO_path, "/PPO_theta_3.0_number_3.csv"));
+PPO_theta_3_number_4 = readmatrix(strcat(PPO_path, "/PPO_theta_3.0_number_4.csv"));
 
 PPO_theta_2_number_0 = readmatrix(strcat(PPO_path, "/PPO_theta_2.0_number_0.csv"));
 PPO_theta_2_number_1 = readmatrix(strcat(PPO_path, "/PPO_theta_2.0_number_1.csv"));
@@ -129,78 +128,7 @@ PPO_theta_5_number_2 = readmatrix(strcat(PPO_path, "/PPO_theta_5.0_number_2.csv"
 PPO_theta_5_number_3 = readmatrix(strcat(PPO_path, "/PPO_theta_5.0_number_3.csv"));
 PPO_theta_5_number_4 = readmatrix(strcat(PPO_path, "/PPO_theta_5.0_number_4.csv"));
 
-%delete first row of all matrices
-TRPO_theta_01_number_0(1,:) = []; 
-TRPO_theta_01_number_1(1,:) = []; 
-TRPO_theta_01_number_2(1,:) = []; 
-TRPO_theta_01_number_3(1,:) = []; 
-TRPO_theta_01_number_4(1,:) = []; 
-TRPO_theta_02_number_0(1,:) = []; 
-TRPO_theta_02_number_1(1,:) = []; 
-TRPO_theta_02_number_2(1,:) = []; 
-TRPO_theta_02_number_3(1,:) = []; 
-TRPO_theta_02_number_4(1,:) = []; 
-TRPO_theta_05_number_0(1,:) = []; 
-TRPO_theta_05_number_1(1,:) = []; 
-TRPO_theta_05_number_2(1,:) = []; 
-TRPO_theta_05_number_3(1,:) = []; 
-TRPO_theta_05_number_4(1,:) = []; 
-TRPO_theta_1_number_0(1,:) = [];
-TRPO_theta_1_number_1(1,:) = [];
-TRPO_theta_1_number_2(1,:) = [];
-TRPO_theta_1_number_3(1,:) = [];
-TRPO_theta_1_number_4(1,:) = [];
-TRPO_theta_2_number_0(1,:) = [];
-TRPO_theta_2_number_1(1,:) = [];
-TRPO_theta_2_number_2(1,:) = [];
-TRPO_theta_2_number_3(1,:) = [];
-TRPO_theta_2_number_4(1,:) = [];
-TRPO_theta_3_number_0(1,:) = [];
-TRPO_theta_3_number_1(1,:) = [];
-TRPO_theta_3_number_2(1,:) = [];
-TRPO_theta_3_number_3(1,:) = [];
-TRPO_theta_3_number_4(1,:) = [];
-TRPO_theta_5_number_0(1,:) = [];
-TRPO_theta_5_number_1(1,:) = [];
-TRPO_theta_5_number_2(1,:) = [];
-TRPO_theta_5_number_3(1,:) = [];
-TRPO_theta_5_number_4(1,:) = [];
 
-PPO_theta_01_number_0(1,:) = [];
-PPO_theta_01_number_1(1,:) = [];
-PPO_theta_01_number_2(1,:) = [];
-PPO_theta_01_number_3(1,:) = [];
-PPO_theta_01_number_4(1,:) = [];
-PPO_theta_02_number_0(1,:) = [];
-PPO_theta_02_number_1(1,:) = [];
-PPO_theta_02_number_2(1,:) = [];
-PPO_theta_02_number_3(1,:) = [];
-PPO_theta_02_number_4(1,:) = [];
-PPO_theta_05_number_0(1,:) = [];
-PPO_theta_05_number_1(1,:) = [];
-PPO_theta_05_number_2(1,:) = [];
-PPO_theta_05_number_3(1,:) = [];
-PPO_theta_05_number_4(1,:) = [];
-PPO_theta_3_number_0(1,:) = []; 
-PPO_theta_3_number_1(1,:) = []; 
-PPO_theta_3_number_2(1,:) = []; 
-PPO_theta_3_number_3(1,:) = []; 
-PPO_theta_3_number_4(1,:) = []; 
-PPO_theta_1_number_0(1,:) = []; 
-PPO_theta_1_number_1(1,:) = []; 
-PPO_theta_1_number_2(1,:) = []; 
-PPO_theta_1_number_3(1,:) = []; 
-PPO_theta_1_number_4(1,:) = []; 
-PPO_theta_2_number_0(1,:) = []; 
-PPO_theta_2_number_1(1,:) = []; 
-PPO_theta_2_number_2(1,:) = []; 
-PPO_theta_2_number_3(1,:) = []; 
-PPO_theta_2_number_4(1,:) = []; 
-PPO_theta_5_number_0(1,:) = []; 
-PPO_theta_5_number_1(1,:) = []; 
-PPO_theta_5_number_2(1,:) = []; 
-PPO_theta_5_number_3(1,:) = []; 
-PPO_theta_5_number_4(1,:) = [];
 
 %take the mean of all
 TRPO_theta_01_avg = (TRPO_theta_01_number_0 + TRPO_theta_01_number_1 + TRPO_theta_01_number_2 + TRPO_theta_01_number_3 + TRPO_theta_01_number_4)/number_of_evals;
@@ -267,3 +195,159 @@ legend('PPO 0.1', 'PPO 0.2', 'PPO 0.5', 'PPO 1.0', 'PPO 2.0', 'PPO 3.0', 'PPO 5.
 %place legend top left corner
 legend('Location','northwest');
 hold off;
+
+%calulate and plot iterations to reach 300
+TRPO_theta_01_number_0_first_300 = return_it_where_val_is_reached(TRPO_theta_01_number_0, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_01_number_1_first_300 = return_it_where_val_is_reached(TRPO_theta_01_number_1, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_01_number_2_first_300 = return_it_where_val_is_reached(TRPO_theta_01_number_2, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_01_number_3_first_300 = return_it_where_val_is_reached(TRPO_theta_01_number_3, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_01_number_4_first_300 = return_it_where_val_is_reached(TRPO_theta_01_number_4, 300, TRPO_train_mean_evaluation_reward);
+
+TRPO_theta_02_number_0_first_300 = return_it_where_val_is_reached(TRPO_theta_02_number_0, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_02_number_1_first_300 = return_it_where_val_is_reached(TRPO_theta_02_number_1, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_02_number_2_first_300 = return_it_where_val_is_reached(TRPO_theta_02_number_2, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_02_number_3_first_300 = return_it_where_val_is_reached(TRPO_theta_02_number_3, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_02_number_4_first_300 = return_it_where_val_is_reached(TRPO_theta_02_number_4, 300, TRPO_train_mean_evaluation_reward);
+
+TRPO_theta_05_number_0_first_300 = return_it_where_val_is_reached(TRPO_theta_05_number_0, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_05_number_1_first_300 = return_it_where_val_is_reached(TRPO_theta_05_number_1, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_05_number_2_first_300 = return_it_where_val_is_reached(TRPO_theta_05_number_2, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_05_number_3_first_300 = return_it_where_val_is_reached(TRPO_theta_05_number_3, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_05_number_4_first_300 = return_it_where_val_is_reached(TRPO_theta_05_number_4, 300, TRPO_train_mean_evaluation_reward);
+
+TRPO_theta_1_number_0_first_300 = return_it_where_val_is_reached(TRPO_theta_1_number_0, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_1_number_1_first_300 = return_it_where_val_is_reached(TRPO_theta_1_number_1, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_1_number_2_first_300 = return_it_where_val_is_reached(TRPO_theta_1_number_2, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_1_number_3_first_300 = return_it_where_val_is_reached(TRPO_theta_1_number_3, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_1_number_4_first_300 = return_it_where_val_is_reached(TRPO_theta_1_number_4, 300, TRPO_train_mean_evaluation_reward);
+
+TRPO_theta_2_number_0_first_300 = return_it_where_val_is_reached(TRPO_theta_2_number_0, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_2_number_1_first_300 = return_it_where_val_is_reached(TRPO_theta_2_number_1, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_2_number_2_first_300 = return_it_where_val_is_reached(TRPO_theta_2_number_2, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_2_number_3_first_300 = return_it_where_val_is_reached(TRPO_theta_2_number_3, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_2_number_4_first_300 = return_it_where_val_is_reached(TRPO_theta_2_number_4, 300, TRPO_train_mean_evaluation_reward);
+
+TRPO_theta_3_number_0_first_300 = return_it_where_val_is_reached(TRPO_theta_3_number_0, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_3_number_1_first_300 = return_it_where_val_is_reached(TRPO_theta_3_number_1, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_3_number_2_first_300 = return_it_where_val_is_reached(TRPO_theta_3_number_2, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_3_number_3_first_300 = return_it_where_val_is_reached(TRPO_theta_3_number_3, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_3_number_4_first_300 = return_it_where_val_is_reached(TRPO_theta_3_number_4, 300, TRPO_train_mean_evaluation_reward);
+
+TRPO_theta_5_number_0_first_300 = return_it_where_val_is_reached(TRPO_theta_5_number_0, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_5_number_1_first_300 = return_it_where_val_is_reached(TRPO_theta_5_number_1, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_5_number_2_first_300 = return_it_where_val_is_reached(TRPO_theta_5_number_2, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_5_number_3_first_300 = return_it_where_val_is_reached(TRPO_theta_5_number_3, 300, TRPO_train_mean_evaluation_reward);
+TRPO_theta_5_number_4_first_300 = return_it_where_val_is_reached(TRPO_theta_5_number_4, 300, TRPO_train_mean_evaluation_reward);
+
+PPO_theta_01_number_0_first_300 = return_it_where_val_is_reached(PPO_theta_01_number_0, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_01_number_1_first_300 = return_it_where_val_is_reached(PPO_theta_01_number_1, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_01_number_2_first_300 = return_it_where_val_is_reached(PPO_theta_01_number_2, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_01_number_3_first_300 = return_it_where_val_is_reached(PPO_theta_01_number_3, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_01_number_4_first_300 = return_it_where_val_is_reached(PPO_theta_01_number_4, 300, PPO_train_mean_evaluation_reward);
+
+PPO_theta_02_number_0_first_300 = return_it_where_val_is_reached(PPO_theta_02_number_0, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_02_number_1_first_300 = return_it_where_val_is_reached(PPO_theta_02_number_1, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_02_number_2_first_300 = return_it_where_val_is_reached(PPO_theta_02_number_2, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_02_number_3_first_300 = return_it_where_val_is_reached(PPO_theta_02_number_3, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_02_number_4_first_300 = return_it_where_val_is_reached(PPO_theta_02_number_4, 300, PPO_train_mean_evaluation_reward);
+
+PPO_theta_05_number_0_first_300 = return_it_where_val_is_reached(PPO_theta_05_number_0, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_05_number_1_first_300 = return_it_where_val_is_reached(PPO_theta_05_number_1, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_05_number_2_first_300 = return_it_where_val_is_reached(PPO_theta_05_number_2, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_05_number_3_first_300 = return_it_where_val_is_reached(PPO_theta_05_number_3, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_05_number_4_first_300 = return_it_where_val_is_reached(PPO_theta_05_number_4, 300, PPO_train_mean_evaluation_reward);
+
+PPO_theta_1_number_0_first_300 = return_it_where_val_is_reached(PPO_theta_1_number_0, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_1_number_1_first_300 = return_it_where_val_is_reached(PPO_theta_1_number_1, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_1_number_2_first_300 = return_it_where_val_is_reached(PPO_theta_1_number_2, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_1_number_3_first_300 = return_it_where_val_is_reached(PPO_theta_1_number_3, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_1_number_4_first_300 = return_it_where_val_is_reached(PPO_theta_1_number_4, 300, PPO_train_mean_evaluation_reward);
+
+PPO_theta_2_number_0_first_300 = return_it_where_val_is_reached(PPO_theta_2_number_0, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_2_number_1_first_300 = return_it_where_val_is_reached(PPO_theta_2_number_1, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_2_number_2_first_300 = return_it_where_val_is_reached(PPO_theta_2_number_2, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_2_number_3_first_300 = return_it_where_val_is_reached(PPO_theta_2_number_3, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_2_number_4_first_300 = return_it_where_val_is_reached(PPO_theta_2_number_4, 300, PPO_train_mean_evaluation_reward);
+
+PPO_theta_3_number_0_first_300 = return_it_where_val_is_reached(PPO_theta_3_number_0, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_3_number_1_first_300 = return_it_where_val_is_reached(PPO_theta_3_number_1, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_3_number_2_first_300 = return_it_where_val_is_reached(PPO_theta_3_number_2, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_3_number_3_first_300 = return_it_where_val_is_reached(PPO_theta_3_number_3, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_3_number_4_first_300 = return_it_where_val_is_reached(PPO_theta_3_number_4, 300, PPO_train_mean_evaluation_reward);
+
+PPO_theta_5_number_0_first_300 = return_it_where_val_is_reached(PPO_theta_5_number_0, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_5_number_1_first_300 = return_it_where_val_is_reached(PPO_theta_5_number_1, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_5_number_2_first_300 = return_it_where_val_is_reached(PPO_theta_5_number_2, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_5_number_3_first_300 = return_it_where_val_is_reached(PPO_theta_5_number_3, 300, PPO_train_mean_evaluation_reward);
+PPO_theta_5_number_4_first_300 = return_it_where_val_is_reached(PPO_theta_5_number_4, 300, PPO_train_mean_evaluation_reward);
+
+%make vector with all first reaches
+TRPO_theta_01_first_300 = [TRPO_theta_01_number_0_first_300, TRPO_theta_01_number_1_first_300, TRPO_theta_01_number_2_first_300, TRPO_theta_01_number_3_first_300, TRPO_theta_01_number_4_first_300];
+TRPO_theta_02_first_300 = [TRPO_theta_02_number_0_first_300, TRPO_theta_02_number_1_first_300, TRPO_theta_02_number_2_first_300, TRPO_theta_02_number_3_first_300, TRPO_theta_02_number_4_first_300];
+TRPO_theta_05_first_300 = [TRPO_theta_05_number_0_first_300, TRPO_theta_05_number_1_first_300, TRPO_theta_05_number_2_first_300, TRPO_theta_05_number_3_first_300, TRPO_theta_05_number_4_first_300];
+TRPO_theta_1_first_300 = [TRPO_theta_1_number_0_first_300, TRPO_theta_1_number_1_first_300, TRPO_theta_1_number_2_first_300, TRPO_theta_1_number_3_first_300, TRPO_theta_1_number_4_first_300];
+TRPO_theta_2_first_300 = [TRPO_theta_2_number_0_first_300, TRPO_theta_2_number_1_first_300, TRPO_theta_2_number_2_first_300, TRPO_theta_2_number_3_first_300, TRPO_theta_2_number_4_first_300];
+TRPO_theta_3_first_300 = [TRPO_theta_3_number_0_first_300, TRPO_theta_3_number_1_first_300, TRPO_theta_3_number_2_first_300, TRPO_theta_3_number_3_first_300, TRPO_theta_3_number_4_first_300];
+TRPO_theta_5_first_300 = [TRPO_theta_5_number_0_first_300, TRPO_theta_5_number_1_first_300, TRPO_theta_5_number_2_first_300, TRPO_theta_5_number_3_first_300, TRPO_theta_5_number_4_first_300];
+
+PPO_theta_01_first_300 = [PPO_theta_01_number_0_first_300, PPO_theta_01_number_1_first_300, PPO_theta_01_number_2_first_300, PPO_theta_01_number_3_first_300, PPO_theta_01_number_4_first_300];
+PPO_theta_02_first_300 = [PPO_theta_02_number_0_first_300, PPO_theta_02_number_1_first_300, PPO_theta_02_number_2_first_300, PPO_theta_02_number_3_first_300, PPO_theta_02_number_4_first_300];
+PPO_theta_05_first_300 = [PPO_theta_05_number_0_first_300, PPO_theta_05_number_1_first_300, PPO_theta_05_number_2_first_300, PPO_theta_05_number_3_first_300, PPO_theta_05_number_4_first_300];
+PPO_theta_1_first_300 = [PPO_theta_1_number_0_first_300, PPO_theta_1_number_1_first_300, PPO_theta_1_number_2_first_300, PPO_theta_1_number_3_first_300, PPO_theta_1_number_4_first_300];
+PPO_theta_2_first_300 = [PPO_theta_2_number_0_first_300, PPO_theta_2_number_1_first_300, PPO_theta_2_number_2_first_300, PPO_theta_2_number_3_first_300, PPO_theta_2_number_4_first_300];
+PPO_theta_3_first_300 = [PPO_theta_3_number_0_first_300, PPO_theta_3_number_1_first_300, PPO_theta_3_number_2_first_300, PPO_theta_3_number_3_first_300, PPO_theta_3_number_4_first_300];
+PPO_theta_5_first_300 = [PPO_theta_5_number_0_first_300, PPO_theta_5_number_1_first_300, PPO_theta_5_number_2_first_300, PPO_theta_5_number_3_first_300, PPO_theta_5_number_4_first_300];
+
+%calculate mean
+TRPO_theta_01_first_300_mean = mean(TRPO_theta_01_first_300);
+TRPO_theta_02_first_300_mean = mean(TRPO_theta_02_first_300);
+TRPO_theta_05_first_300_mean = mean(TRPO_theta_05_first_300);
+TRPO_theta_1_first_300_mean = mean(TRPO_theta_1_first_300);
+TRPO_theta_2_first_300_mean = mean(TRPO_theta_2_first_300);
+TRPO_theta_3_first_300_mean = mean(TRPO_theta_3_first_300);
+TRPO_theta_5_first_300_mean = mean(TRPO_theta_5_first_300);
+
+PPO_theta_01_first_300_mean = mean(PPO_theta_01_first_300);
+PPO_theta_02_first_300_mean = mean(PPO_theta_02_first_300);
+PPO_theta_05_first_300_mean = mean(PPO_theta_05_first_300);
+PPO_theta_1_first_300_mean = mean(PPO_theta_1_first_300);
+PPO_theta_2_first_300_mean = mean(PPO_theta_2_first_300);
+PPO_theta_3_first_300_mean = mean(PPO_theta_3_first_300);
+PPO_theta_5_first_300_mean = mean(PPO_theta_5_first_300);
+
+%calulate lowest    
+TRPO_theta_01_first_300_lowest = min(TRPO_theta_01_first_300);
+TRPO_theta_02_first_300_lowest = min(TRPO_theta_02_first_300);
+TRPO_theta_05_first_300_lowest = min(TRPO_theta_05_first_300);
+TRPO_theta_1_first_300_lowest = min(TRPO_theta_1_first_300);
+TRPO_theta_2_first_300_lowest = min(TRPO_theta_2_first_300);
+TRPO_theta_3_first_300_lowest = min(TRPO_theta_3_first_300);
+TRPO_theta_5_first_300_lowest = min(TRPO_theta_5_first_300);
+
+PPO_theta_01_first_300_lowest = min(PPO_theta_01_first_300);
+PPO_theta_02_first_300_lowest = min(PPO_theta_02_first_300);
+PPO_theta_05_first_300_lowest = min(PPO_theta_05_first_300);
+PPO_theta_1_first_300_lowest = min(PPO_theta_1_first_300);
+PPO_theta_2_first_300_lowest = min(PPO_theta_2_first_300);
+PPO_theta_3_first_300_lowest = min(PPO_theta_3_first_300);
+PPO_theta_5_first_300_lowest = min(PPO_theta_5_first_300);
+
+%plot TRPO
+figure(3);
+xticks_vec = ["0.1" "0.2" "0.5" "1.0" "2.0" "3.0" "5.0"];
+bar(xticks_vec, [TRPO_theta_01_first_300_mean, TRPO_theta_02_first_300_mean, TRPO_theta_05_first_300_mean, TRPO_theta_1_first_300_mean, TRPO_theta_2_first_300_mean, TRPO_theta_3_first_300_mean, TRPO_theta_5_first_300_mean; TRPO_theta_01_first_300_lowest, TRPO_theta_02_first_300_lowest, TRPO_theta_05_first_300_lowest, TRPO_theta_1_first_300_lowest, TRPO_theta_2_first_300_lowest, TRPO_theta_3_first_300_lowest, TRPO_theta_5_first_300_lowest]);
+title('Theta value impact on TRPO');
+subtitle('Iteration to reach 300');
+xlabel('Theta');
+ylabel('Iterations');
+legend('Mean', 'Lowest');
+
+%plot PPO
+figure(4);
+xticks_vec = ["0.1" "0.2" "0.5" "1.0" "2.0" "3.0" "5.0"];
+bar(xticks_vec, [PPO_theta_01_first_300_mean, PPO_theta_02_first_300_mean, PPO_theta_05_first_300_mean, PPO_theta_1_first_300_mean, PPO_theta_2_first_300_mean, PPO_theta_3_first_300_mean, PPO_theta_5_first_300_mean; PPO_theta_01_first_300_lowest, PPO_theta_02_first_300_lowest, PPO_theta_05_first_300_lowest, PPO_theta_1_first_300_lowest, PPO_theta_2_first_300_lowest, PPO_theta_3_first_300_lowest, PPO_theta_5_first_300_lowest]);
+title('Theta value impact on PPO');
+subtitle('Iteration to reach 300');
+xlabel('Theta');
+ylabel('Iterations');
+legend('Mean', 'Lowest');
