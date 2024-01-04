@@ -37,12 +37,13 @@ def def_args():
     parser.add_argument('--use_ppo', type=bool, default=False, help='Use PPO instead of TRPO')
     parser.add_argument('--use_trpo', type=bool, default=False, help='Use TRPO instead of PPO')
     
+    parser.add_argument('--theta', default=0, type=float, help='Theta for PPO')
+    parser.add_argument('--sigma', default=0, type=float, help='Sigma for PPO')
+    
     #check if folder and name are given, if not, terminate with error
     requiredNamed = parser.add_argument_group('required named arguments')
     #required
     
-    parser.add_argument('--theta', default=1, type=float, help='Theta for PPO', required=True)
-    parser.add_argument('--sigma', default=0.1, type=float, help='Sigma for PPO', required=True)
     requiredNamed.add_argument('--path', type=str, default=None, help='Path to model to load', required=True)
     requiredNamed.add_argument('--log_name', type=str, default=None, help='Name of model to load', required=True)
     

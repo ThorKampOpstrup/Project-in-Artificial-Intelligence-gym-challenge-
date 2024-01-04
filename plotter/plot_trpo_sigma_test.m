@@ -1,5 +1,6 @@
 clear;
 
+addpath('plotter/');
 
 % define column descriptors
 step = 1;
@@ -50,37 +51,6 @@ TRPO_sigma_020_number_2 = readmatrix(strcat(path, "TRPO_sigma_0.200_number_2.csv
 TRPO_sigma_020_number_3 = readmatrix(strcat(path, "TRPO_sigma_0.200_number_3.csv"));
 TRPO_sigma_020_number_4 = readmatrix(strcat(path, "TRPO_sigma_0.200_number_4.csv"));
 
-%delete last row of all matrices
-TRPO_sigma_001_number_0(end,:) = [];
-TRPO_sigma_001_number_1(end,:) = [];
-TRPO_sigma_001_number_2(end,:) = [];
-TRPO_sigma_001_number_3(end,:) = [];
-TRPO_sigma_001_number_4(end,:) = [];
-
-TRPO_sigma_002_number_0(end,:) = [];
-TRPO_sigma_002_number_1(end,:) = [];
-TRPO_sigma_002_number_2(end,:) = [];
-TRPO_sigma_002_number_3(end,:) = [];
-TRPO_sigma_002_number_4(end,:) = [];
-
-TRPO_sigma_005_number_0(end,:) = [];
-TRPO_sigma_005_number_1(end,:) = [];
-TRPO_sigma_005_number_2(end,:) = [];
-TRPO_sigma_005_number_3(end,:) = [];
-TRPO_sigma_005_number_4(end,:) = [];
-
-TRPO_sigma_010_number_0(end,:) = [];
-TRPO_sigma_010_number_1(end,:) = [];
-TRPO_sigma_010_number_2(end,:) = [];
-TRPO_sigma_010_number_3(end,:) = [];
-TRPO_sigma_010_number_4(end,:) = [];
-
-TRPO_sigma_020_number_0(end,:) = [];
-TRPO_sigma_020_number_1(end,:) = [];
-TRPO_sigma_020_number_2(end,:) = [];
-TRPO_sigma_020_number_3(end,:) = [];
-TRPO_sigma_020_number_4(end,:) = [];
-
 %takle the mean of all
 TRPO_sigma_001_mean = (TRPO_sigma_001_number_0 + TRPO_sigma_001_number_1 + TRPO_sigma_001_number_2 + TRPO_sigma_001_number_3 + TRPO_sigma_001_number_4)/5;
 TRPO_sigma_002_mean = (TRPO_sigma_002_number_0 + TRPO_sigma_002_number_1 + TRPO_sigma_002_number_2 + TRPO_sigma_002_number_3 + TRPO_sigma_002_number_4)/5;
@@ -104,3 +74,53 @@ title('TRPO: Mean Evaluation Reward vs Iterations');
 xlabel('Iterations');
 ylabel('Mean Evaluation Reward');
 hold off;
+
+TRPO_sigma_001_number_0_first_300 = return_it_where_val_is_reached(TRPO_sigma_001_number_0, 300, train_mean_evaluation_reward);
+TRPO_sigma_001_number_1_first_300 = return_it_where_val_is_reached(TRPO_sigma_001_number_1, 300, train_mean_evaluation_reward);
+TRPO_sigma_001_number_2_first_300 = return_it_where_val_is_reached(TRPO_sigma_001_number_2, 300, train_mean_evaluation_reward);
+TRPO_sigma_001_number_3_first_300 = return_it_where_val_is_reached(TRPO_sigma_001_number_3, 300, train_mean_evaluation_reward);
+TRPO_sigma_001_number_4_first_300 = return_it_where_val_is_reached(TRPO_sigma_001_number_4, 300, train_mean_evaluation_reward);
+
+TRPO_sigma_002_number_0_first_300 = return_it_where_val_is_reached(TRPO_sigma_002_number_0, 300, train_mean_evaluation_reward);
+TRPO_sigma_002_number_1_first_300 = return_it_where_val_is_reached(TRPO_sigma_002_number_1, 300, train_mean_evaluation_reward);
+TRPO_sigma_002_number_2_first_300 = return_it_where_val_is_reached(TRPO_sigma_002_number_2, 300, train_mean_evaluation_reward);
+TRPO_sigma_002_number_3_first_300 = return_it_where_val_is_reached(TRPO_sigma_002_number_3, 300, train_mean_evaluation_reward);
+TRPO_sigma_002_number_4_first_300 = return_it_where_val_is_reached(TRPO_sigma_002_number_4, 300, train_mean_evaluation_reward);
+
+TRPO_sigma_005_number_0_first_300 = return_it_where_val_is_reached(TRPO_sigma_005_number_0, 300, train_mean_evaluation_reward);
+TRPO_sigma_005_number_1_first_300 = return_it_where_val_is_reached(TRPO_sigma_005_number_1, 300, train_mean_evaluation_reward);
+TRPO_sigma_005_number_2_first_300 = return_it_where_val_is_reached(TRPO_sigma_005_number_2, 300, train_mean_evaluation_reward);
+TRPO_sigma_005_number_3_first_300 = return_it_where_val_is_reached(TRPO_sigma_005_number_3, 300, train_mean_evaluation_reward);
+TRPO_sigma_005_number_4_first_300 = return_it_where_val_is_reached(TRPO_sigma_005_number_4, 300, train_mean_evaluation_reward);
+
+TRPO_sigma_010_number_0_first_300 = return_it_where_val_is_reached(TRPO_sigma_010_number_0, 300, train_mean_evaluation_reward);
+TRPO_sigma_010_number_1_first_300 = return_it_where_val_is_reached(TRPO_sigma_010_number_1, 300, train_mean_evaluation_reward);
+TRPO_sigma_010_number_2_first_300 = return_it_where_val_is_reached(TRPO_sigma_010_number_2, 300, train_mean_evaluation_reward);
+TRPO_sigma_010_number_3_first_300 = return_it_where_val_is_reached(TRPO_sigma_010_number_3, 300, train_mean_evaluation_reward);
+TRPO_sigma_010_number_4_first_300 = return_it_where_val_is_reached(TRPO_sigma_010_number_4, 300, train_mean_evaluation_reward);
+
+TRPO_sigma_020_number_0_first_300 = return_it_where_val_is_reached(TRPO_sigma_020_number_0, 300, train_mean_evaluation_reward);
+TRPO_sigma_020_number_1_first_300 = return_it_where_val_is_reached(TRPO_sigma_020_number_1, 300, train_mean_evaluation_reward);
+TRPO_sigma_020_number_2_first_300 = return_it_where_val_is_reached(TRPO_sigma_020_number_2, 300, train_mean_evaluation_reward);
+TRPO_sigma_020_number_3_first_300 = return_it_where_val_is_reached(TRPO_sigma_020_number_3, 300, train_mean_evaluation_reward);
+TRPO_sigma_020_number_4_first_300 = return_it_where_val_is_reached(TRPO_sigma_020_number_4, 300, train_mean_evaluation_reward);
+
+TRPO_sigma_001_first_300 = [TRPO_sigma_001_number_0_first_300, TRPO_sigma_001_number_1_first_300, TRPO_sigma_001_number_2_first_300, TRPO_sigma_001_number_3_first_300, TRPO_sigma_001_number_4_first_300];
+TRPO_sigma_002_first_300 = [TRPO_sigma_002_number_0_first_300, TRPO_sigma_002_number_1_first_300, TRPO_sigma_002_number_2_first_300, TRPO_sigma_002_number_3_first_300, TRPO_sigma_002_number_4_first_300];
+TRPO_sigma_005_first_300 = [TRPO_sigma_005_number_0_first_300, TRPO_sigma_005_number_1_first_300, TRPO_sigma_005_number_2_first_300, TRPO_sigma_005_number_3_first_300, TRPO_sigma_005_number_4_first_300];
+TRPO_sigma_010_first_300 = [TRPO_sigma_010_number_0_first_300, TRPO_sigma_010_number_1_first_300, TRPO_sigma_010_number_2_first_300, TRPO_sigma_010_number_3_first_300, TRPO_sigma_010_number_4_first_300];
+TRPO_sigma_020_first_300 = [TRPO_sigma_020_number_0_first_300, TRPO_sigma_020_number_1_first_300, TRPO_sigma_020_number_2_first_300, TRPO_sigma_020_number_3_first_300, TRPO_sigma_020_number_4_first_300];
+
+
+TRPO_sigma_001_first_300_mean = mean(TRPO_sigma_001_first_300)
+TRPO_sigma_002_first_300_mean = mean(TRPO_sigma_002_first_300)
+TRPO_sigma_005_first_300_mean = mean(TRPO_sigma_005_first_300)
+TRPO_sigma_010_first_300_mean = mean(TRPO_sigma_010_first_300)
+TRPO_sigma_020_first_300_mean = mean(TRPO_sigma_020_first_300)
+
+TRPO_sigma_001_first_300_lowest = min(TRPO_sigma_001_first_300)
+TRPO_sigma_002_first_300_lowest = min(TRPO_sigma_002_first_300)
+TRPO_sigma_005_first_300_lowest = min(TRPO_sigma_005_first_300)
+TRPO_sigma_010_first_300_lowest = min(TRPO_sigma_010_first_300)
+TRPO_sigma_020_first_300_lowest = min(TRPO_sigma_020_first_300)
+
