@@ -1,4 +1,11 @@
+%close all figures
+close all;
+
 addpath('plotter/');
+
+load_avg_standard_ppo
+load_avg_standard_trpo
+
 number_of_evals = 5;
 
 % define column descriptors TRPO
@@ -155,6 +162,7 @@ hold on;
 
 increments = 1/7;
 %plot the daqta, let it go from ret to green ina smooth way in rgb values
+plot(iterations_vec, trpo_standad_avg(:,TRPO_train_mean_evaluation_reward), 'Color', [0, 0, 1]);
 plot(iterations_vec, TRPO_theta_01_avg(:,TRPO_train_mean_evaluation_reward), 'Color', [1-(1*increments), 0+(1*increments), 0]);
 plot(iterations_vec, TRPO_theta_02_avg(:,TRPO_train_mean_evaluation_reward), 'Color', [1-(2*increments), 0+(2*increments), 0]);
 plot(iterations_vec, TRPO_theta_05_avg(:,TRPO_train_mean_evaluation_reward), 'Color', [1-(3*increments), 0+(3*increments), 0]);
@@ -165,7 +173,7 @@ plot(iterations_vec, TRPO_theta_5_avg(:,TRPO_train_mean_evaluation_reward), 'Col
 
 %insert horizontal line at 300 color red and title
 yline(300, '--r', '300');
-legend('TRPO 0.1', 'TRPO 0.2', 'TRPO 0.5', 'TRPO 1.0', 'TRPO 2.0', 'TRPO 3.0', 'TRPO 5.0');
+legend('baseline', 'TRPO 0.1', 'TRPO 0.2', 'TRPO 0.5', 'TRPO 1.0', 'TRPO 2.0', 'TRPO 3.0', 'TRPO 5.0');
 title('Theta value impact on TRPO');
 subtitle('Green higher theta, red lower theta');
 xticks([0 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150]);
@@ -177,6 +185,7 @@ hold off;
 
 figure(2);
 hold on;
+plot(iterations_vec, PPO_standad_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0, 0, 1]);
 plot(iterations_vec, PPO_theta_01_avg(:,PPO_train_mean_evaluation_reward), 'Color', [1-(1*increments), 0+(1*increments), 0]);
 plot(iterations_vec, PPO_theta_02_avg(:,PPO_train_mean_evaluation_reward), 'Color', [1-(2*increments), 0+(2*increments), 0]);
 plot(iterations_vec, PPO_theta_05_avg(:,PPO_train_mean_evaluation_reward), 'Color', [1-(3*increments), 0+(3*increments), 0]);
@@ -191,7 +200,7 @@ subtitle('Green higher theta, red lower theta');
 xticks([0 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150]);
 xlabel('Iterations');
 ylabel('Mean Evaluation Reward');
-legend('PPO 0.1', 'PPO 0.2', 'PPO 0.5', 'PPO 1.0', 'PPO 2.0', 'PPO 3.0', 'PPO 5.0');
+legend('baseline', 'PPO 0.1', 'PPO 0.2', 'PPO 0.5', 'PPO 1.0', 'PPO 2.0', 'PPO 3.0', 'PPO 5.0');
 %place legend top left corner
 legend('Location','northwest');
 hold off;
@@ -282,21 +291,21 @@ PPO_theta_5_number_3_first_300 = return_it_where_val_is_reached(PPO_theta_5_numb
 PPO_theta_5_number_4_first_300 = return_it_where_val_is_reached(PPO_theta_5_number_4, 300, PPO_train_mean_evaluation_reward);
 
 %make vector with all first reaches
-TRPO_theta_01_first_300 = [TRPO_theta_01_number_0_first_300, TRPO_theta_01_number_1_first_300, TRPO_theta_01_number_2_first_300, TRPO_theta_01_number_3_first_300, TRPO_theta_01_number_4_first_300];
-TRPO_theta_02_first_300 = [TRPO_theta_02_number_0_first_300, TRPO_theta_02_number_1_first_300, TRPO_theta_02_number_2_first_300, TRPO_theta_02_number_3_first_300, TRPO_theta_02_number_4_first_300];
-TRPO_theta_05_first_300 = [TRPO_theta_05_number_0_first_300, TRPO_theta_05_number_1_first_300, TRPO_theta_05_number_2_first_300, TRPO_theta_05_number_3_first_300, TRPO_theta_05_number_4_first_300];
-TRPO_theta_1_first_300 = [TRPO_theta_1_number_0_first_300, TRPO_theta_1_number_1_first_300, TRPO_theta_1_number_2_first_300, TRPO_theta_1_number_3_first_300, TRPO_theta_1_number_4_first_300];
-TRPO_theta_2_first_300 = [TRPO_theta_2_number_0_first_300, TRPO_theta_2_number_1_first_300, TRPO_theta_2_number_2_first_300, TRPO_theta_2_number_3_first_300, TRPO_theta_2_number_4_first_300];
-TRPO_theta_3_first_300 = [TRPO_theta_3_number_0_first_300, TRPO_theta_3_number_1_first_300, TRPO_theta_3_number_2_first_300, TRPO_theta_3_number_3_first_300, TRPO_theta_3_number_4_first_300];
-TRPO_theta_5_first_300 = [TRPO_theta_5_number_0_first_300, TRPO_theta_5_number_1_first_300, TRPO_theta_5_number_2_first_300, TRPO_theta_5_number_3_first_300, TRPO_theta_5_number_4_first_300];
+TRPO_theta_01_first_300 = [TRPO_theta_01_number_0_first_300, TRPO_theta_01_number_1_first_300, TRPO_theta_01_number_2_first_300, TRPO_theta_01_number_3_first_300, TRPO_theta_01_number_4_first_300]
+TRPO_theta_02_first_300 = [TRPO_theta_02_number_0_first_300, TRPO_theta_02_number_1_first_300, TRPO_theta_02_number_2_first_300, TRPO_theta_02_number_3_first_300, TRPO_theta_02_number_4_first_300]
+TRPO_theta_05_first_300 = [TRPO_theta_05_number_0_first_300, TRPO_theta_05_number_1_first_300, TRPO_theta_05_number_2_first_300, TRPO_theta_05_number_3_first_300, TRPO_theta_05_number_4_first_300]
+TRPO_theta_1_first_300 = [TRPO_theta_1_number_0_first_300, TRPO_theta_1_number_1_first_300, TRPO_theta_1_number_2_first_300, TRPO_theta_1_number_3_first_300, TRPO_theta_1_number_4_first_300]
+TRPO_theta_2_first_300 = [TRPO_theta_2_number_0_first_300, TRPO_theta_2_number_1_first_300, TRPO_theta_2_number_2_first_300, TRPO_theta_2_number_3_first_300, TRPO_theta_2_number_4_first_300]
+TRPO_theta_3_first_300 = [TRPO_theta_3_number_0_first_300, TRPO_theta_3_number_1_first_300, TRPO_theta_3_number_2_first_300, TRPO_theta_3_number_3_first_300, TRPO_theta_3_number_4_first_300]
+TRPO_theta_5_first_300 = [TRPO_theta_5_number_0_first_300, TRPO_theta_5_number_1_first_300, TRPO_theta_5_number_2_first_300, TRPO_theta_5_number_3_first_300, TRPO_theta_5_number_4_first_300]
 
-PPO_theta_01_first_300 = [PPO_theta_01_number_0_first_300, PPO_theta_01_number_1_first_300, PPO_theta_01_number_2_first_300, PPO_theta_01_number_3_first_300, PPO_theta_01_number_4_first_300];
-PPO_theta_02_first_300 = [PPO_theta_02_number_0_first_300, PPO_theta_02_number_1_first_300, PPO_theta_02_number_2_first_300, PPO_theta_02_number_3_first_300, PPO_theta_02_number_4_first_300];
-PPO_theta_05_first_300 = [PPO_theta_05_number_0_first_300, PPO_theta_05_number_1_first_300, PPO_theta_05_number_2_first_300, PPO_theta_05_number_3_first_300, PPO_theta_05_number_4_first_300];
-PPO_theta_1_first_300 = [PPO_theta_1_number_0_first_300, PPO_theta_1_number_1_first_300, PPO_theta_1_number_2_first_300, PPO_theta_1_number_3_first_300, PPO_theta_1_number_4_first_300];
-PPO_theta_2_first_300 = [PPO_theta_2_number_0_first_300, PPO_theta_2_number_1_first_300, PPO_theta_2_number_2_first_300, PPO_theta_2_number_3_first_300, PPO_theta_2_number_4_first_300];
-PPO_theta_3_first_300 = [PPO_theta_3_number_0_first_300, PPO_theta_3_number_1_first_300, PPO_theta_3_number_2_first_300, PPO_theta_3_number_3_first_300, PPO_theta_3_number_4_first_300];
-PPO_theta_5_first_300 = [PPO_theta_5_number_0_first_300, PPO_theta_5_number_1_first_300, PPO_theta_5_number_2_first_300, PPO_theta_5_number_3_first_300, PPO_theta_5_number_4_first_300];
+PPO_theta_01_first_300 = [PPO_theta_01_number_0_first_300, PPO_theta_01_number_1_first_300, PPO_theta_01_number_2_first_300, PPO_theta_01_number_3_first_300, PPO_theta_01_number_4_first_300]
+PPO_theta_02_first_300 = [PPO_theta_02_number_0_first_300, PPO_theta_02_number_1_first_300, PPO_theta_02_number_2_first_300, PPO_theta_02_number_3_first_300, PPO_theta_02_number_4_first_300]
+PPO_theta_05_first_300 = [PPO_theta_05_number_0_first_300, PPO_theta_05_number_1_first_300, PPO_theta_05_number_2_first_300, PPO_theta_05_number_3_first_300, PPO_theta_05_number_4_first_300]
+PPO_theta_1_first_300 = [PPO_theta_1_number_0_first_300, PPO_theta_1_number_1_first_300, PPO_theta_1_number_2_first_300, PPO_theta_1_number_3_first_300, PPO_theta_1_number_4_first_300]
+PPO_theta_2_first_300 = [PPO_theta_2_number_0_first_300, PPO_theta_2_number_1_first_300, PPO_theta_2_number_2_first_300, PPO_theta_2_number_3_first_300, PPO_theta_2_number_4_first_300]
+PPO_theta_3_first_300 = [PPO_theta_3_number_0_first_300, PPO_theta_3_number_1_first_300, PPO_theta_3_number_2_first_300, PPO_theta_3_number_3_first_300, PPO_theta_3_number_4_first_300]
+PPO_theta_5_first_300 = [PPO_theta_5_number_0_first_300, PPO_theta_5_number_1_first_300, PPO_theta_5_number_2_first_300, PPO_theta_5_number_3_first_300, PPO_theta_5_number_4_first_300]
 
 %calculate mean
 TRPO_theta_01_first_300_mean = mean(TRPO_theta_01_first_300);
@@ -334,20 +343,24 @@ PPO_theta_5_first_300_lowest = min(PPO_theta_5_first_300);
 
 %plot TRPO
 figure(3);
-xticks_vec = ["0.1" "0.2" "0.5" "1.0" "2.0" "3.0" "5.0"];
-bar(xticks_vec, [TRPO_theta_01_first_300_mean, TRPO_theta_02_first_300_mean, TRPO_theta_05_first_300_mean, TRPO_theta_1_first_300_mean, TRPO_theta_2_first_300_mean, TRPO_theta_3_first_300_mean, TRPO_theta_5_first_300_mean; TRPO_theta_01_first_300_lowest, TRPO_theta_02_first_300_lowest, TRPO_theta_05_first_300_lowest, TRPO_theta_1_first_300_lowest, TRPO_theta_2_first_300_lowest, TRPO_theta_3_first_300_lowest, TRPO_theta_5_first_300_lowest]);
+xticks_vec = ["baseline" "0.1" "0.2" "0.5" "1.0" "2.0" "3.0" "5.0"];
+bar(xticks_vec, [trpo_first_300_mean ,TRPO_theta_01_first_300_mean, TRPO_theta_02_first_300_mean, TRPO_theta_05_first_300_mean, TRPO_theta_1_first_300_mean, TRPO_theta_2_first_300_mean, TRPO_theta_3_first_300_mean, TRPO_theta_5_first_300_mean;trpo_first_300_lowest, TRPO_theta_01_first_300_lowest, TRPO_theta_02_first_300_lowest, TRPO_theta_05_first_300_lowest, TRPO_theta_1_first_300_lowest, TRPO_theta_2_first_300_lowest, TRPO_theta_3_first_300_lowest, TRPO_theta_5_first_300_lowest]);
 title('Theta value impact on TRPO');
 subtitle('Iteration to reach 300');
 xlabel('Theta');
 ylabel('Iterations');
-legend('Mean', 'Lowest');
+yline(trpo_first_300_lowest, '--r');
+yline(trpo_first_300_mean, '--b');
+legend('Mean', 'Lowest', 'baseline lowest', 'baseline mean');
 
 %plot PPO
 figure(4);
-xticks_vec = ["0.1" "0.2" "0.5" "1.0" "2.0" "3.0" "5.0"];
-bar(xticks_vec, [PPO_theta_01_first_300_mean, PPO_theta_02_first_300_mean, PPO_theta_05_first_300_mean, PPO_theta_1_first_300_mean, PPO_theta_2_first_300_mean, PPO_theta_3_first_300_mean, PPO_theta_5_first_300_mean; PPO_theta_01_first_300_lowest, PPO_theta_02_first_300_lowest, PPO_theta_05_first_300_lowest, PPO_theta_1_first_300_lowest, PPO_theta_2_first_300_lowest, PPO_theta_3_first_300_lowest, PPO_theta_5_first_300_lowest]);
+xticks_vec = ["baseline" "0.1" "0.2" "0.5" "1.0" "2.0" "3.0" "5.0"];
+bar(xticks_vec, [trpo_first_300_mean, PPO_theta_01_first_300_mean, PPO_theta_02_first_300_mean, PPO_theta_05_first_300_mean, PPO_theta_1_first_300_mean, PPO_theta_2_first_300_mean, PPO_theta_3_first_300_mean, PPO_theta_5_first_300_mean;ppo_first_300_lowest, PPO_theta_01_first_300_lowest, PPO_theta_02_first_300_lowest, PPO_theta_05_first_300_lowest, PPO_theta_1_first_300_lowest, PPO_theta_2_first_300_lowest, PPO_theta_3_first_300_lowest, PPO_theta_5_first_300_lowest]);
 title('Theta value impact on PPO');
 subtitle('Iteration to reach 300');
 xlabel('Theta');
 ylabel('Iterations');
-legend('Mean', 'Lowest');
+yline(ppo_first_300_lowest, '--r');
+yline(trpo_first_300_mean, '--b');
+legend('Mean', 'Lowest', 'baseline lowest', 'baseline mean');

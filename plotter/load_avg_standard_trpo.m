@@ -1,4 +1,5 @@
 addpath("plotter/");
+
 %function [row] = return_it_where_val_is_reached(matrix, value, column)
 %    rows = size(matrix, 1);
 %    for i = 1:rows
@@ -88,8 +89,8 @@ run20_first_300 = return_it_where_val_is_reached(run20, 300, trpo_train_mean_eva
 trpo_first_300 = [run1_first_300, run2_first_300, run3_first_300, run4_first_300, run5_first_300, run6_first_300, run7_first_300, run8_first_300, run9_first_300, run10_first_300, run11_first_300, run12_first_300, run13_first_300, run14_first_300, run15_first_300, run16_first_300, run17_first_300, run18_first_300, run19_first_300, run20_first_300];
 
 trpo_first_300 = trpo_first_300(trpo_first_300 ~= rows+1);
-trpo_avg_first_300 = mean(trpo_first_300);
+trpo_first_300_mean = mean(trpo_first_300);
 trpo_first_300_lowest = min(trpo_first_300);
 "trpo runs that reached 300: " + length(trpo_first_300)/trpo_number_of_evals*100 + "%"
-"avg it trpo runs that reached 300: " + trpo_avg_first_300
+"avg it trpo runs that reached 300: " + trpo_first_300_mean
 "lowest it trpo runs that reached 300: " + trpo_first_300_lowest

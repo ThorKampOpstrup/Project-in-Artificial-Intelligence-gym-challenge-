@@ -79,8 +79,8 @@ run20_first_300 = return_it_where_val_is_reached(run20, 300, ppo_train_mean_eval
 ppo_first_300 = [run1_first_300, run2_first_300, run3_first_300, run4_first_300, run5_first_300, run6_first_300, run7_first_300, run8_first_300, run9_first_300, run10_first_300, run11_first_300, run12_first_300, run13_first_300, run14_first_300, run15_first_300, run16_first_300, run17_first_300, run18_first_300, run19_first_300, run20_first_300];
 %remove items that are rows + 1
 ppo_first_300 = ppo_first_300(ppo_first_300 ~= rows + 1);
-ppo_avg_first_300 = mean(ppo_first_300);
+ppo_first_300_mean = mean(ppo_first_300);
 ppo_first_300_lowest = min(ppo_first_300);
 "ppo runs that reached 300: " + length(ppo_first_300)/ppo_number_of_evals*100 + "%"
-"avg ppo runs that reached 300: " + ppo_avg_first_300
+"avg ppo runs that reached 300: " + ppo_first_300_mean
 "lowest it ppo run that reached 300: " + ppo_first_300_lowest
