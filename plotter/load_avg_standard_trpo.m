@@ -94,3 +94,6 @@ trpo_first_300_lowest = min(trpo_first_300);
 "trpo runs that reached 300: " + length(trpo_first_300)/trpo_number_of_evals*100 + "%"
 "avg it trpo runs that reached 300: " + trpo_first_300_mean
 "lowest it trpo runs that reached 300: " + trpo_first_300_lowest
+
+%calulate lowes 20% of runs
+trpo_standard_first_300_20_lowest = prctile([trpo_first_300], 20);

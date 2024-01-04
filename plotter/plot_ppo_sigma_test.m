@@ -1,4 +1,5 @@
 clear;
+addpath('plotter/');
 load_avg_standard_ppo
 
 number_of_evals = 5;
@@ -144,7 +145,7 @@ iterations_vec = [1:1:rows];
 figure(1);
 hold on;
 increments = 1/16;
-plot(iterations_vec, PPO_standad_avg(:,train_mean_evaluation_reward), 'Color', [0, 0, 1], 'LineWidth', 2);
+plot(iterations_vec, PPO_standad_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0, 0, 1], 'LineWidth', 2);
 
 plot(iterations_vec, sigma_000_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0+(1*increments), 1-(1*increments), 0], 'LineWidth', 2);
 plot(iterations_vec, sigma_050_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0+(2*increments), 1-(2*increments), 0], 'LineWidth', 1);
@@ -172,108 +173,108 @@ legend('Location', 'northwest');
 xticks([10 20 30 40 50 60 70 80 90 100 110 120 130 140 150])
 hold off;
 
-PPO_sigma_000_number_0_first_300 = return_it_where_val_is_reached(sigma_000_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_050_number_0_first_300 = return_it_where_val_is_reached(sigma_050_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_075_number_0_first_300 = return_it_where_val_is_reached(sigma_075_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_100_number_0_first_300 = return_it_where_val_is_reached(sigma_100_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_125_number_0_first_300 = return_it_where_val_is_reached(sigma_125_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_150_number_0_first_300 = return_it_where_val_is_reached(sigma_150_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_175_number_0_first_300 = return_it_where_val_is_reached(sigma_175_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_200_number_0_first_300 = return_it_where_val_is_reached(sigma_200_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_225_number_0_first_300 = return_it_where_val_is_reached(sigma_225_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_250_number_0_first_300 = return_it_where_val_is_reached(sigma_250_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_275_number_0_first_300 = return_it_where_val_is_reached(sigma_275_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_300_number_0_first_300 = return_it_where_val_is_reached(sigma_300_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_325_number_0_first_300 = return_it_where_val_is_reached(sigma_325_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_350_number_0_first_300 = return_it_where_val_is_reached(sigma_350_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_375_number_0_first_300 = return_it_where_val_is_reached(sigma_375_number_0, 300, train_mean_evaluation_reward);
-PPO_sigma_400_number_0_first_300 = return_it_where_val_is_reached(sigma_400_number_0, 300, train_mean_evaluation_reward);
+PPO_sigma_000_number_0_first_300 = return_it_where_val_is_reached(sigma_000_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_050_number_0_first_300 = return_it_where_val_is_reached(sigma_050_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_075_number_0_first_300 = return_it_where_val_is_reached(sigma_075_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_100_number_0_first_300 = return_it_where_val_is_reached(sigma_100_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_125_number_0_first_300 = return_it_where_val_is_reached(sigma_125_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_150_number_0_first_300 = return_it_where_val_is_reached(sigma_150_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_175_number_0_first_300 = return_it_where_val_is_reached(sigma_175_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_200_number_0_first_300 = return_it_where_val_is_reached(sigma_200_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_225_number_0_first_300 = return_it_where_val_is_reached(sigma_225_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_250_number_0_first_300 = return_it_where_val_is_reached(sigma_250_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_275_number_0_first_300 = return_it_where_val_is_reached(sigma_275_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_300_number_0_first_300 = return_it_where_val_is_reached(sigma_300_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_325_number_0_first_300 = return_it_where_val_is_reached(sigma_325_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_350_number_0_first_300 = return_it_where_val_is_reached(sigma_350_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_375_number_0_first_300 = return_it_where_val_is_reached(sigma_375_number_0, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_400_number_0_first_300 = return_it_where_val_is_reached(sigma_400_number_0, 300,ppo_train_mean_evaluation_reward);
 
-PPO_sigma_000_number_1_first_300 = return_it_where_val_is_reached(sigma_000_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_050_number_1_first_300 = return_it_where_val_is_reached(sigma_050_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_075_number_1_first_300 = return_it_where_val_is_reached(sigma_075_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_100_number_1_first_300 = return_it_where_val_is_reached(sigma_100_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_125_number_1_first_300 = return_it_where_val_is_reached(sigma_125_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_150_number_1_first_300 = return_it_where_val_is_reached(sigma_150_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_175_number_1_first_300 = return_it_where_val_is_reached(sigma_175_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_200_number_1_first_300 = return_it_where_val_is_reached(sigma_200_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_225_number_1_first_300 = return_it_where_val_is_reached(sigma_225_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_250_number_1_first_300 = return_it_where_val_is_reached(sigma_250_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_275_number_1_first_300 = return_it_where_val_is_reached(sigma_275_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_300_number_1_first_300 = return_it_where_val_is_reached(sigma_300_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_325_number_1_first_300 = return_it_where_val_is_reached(sigma_325_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_350_number_1_first_300 = return_it_where_val_is_reached(sigma_350_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_375_number_1_first_300 = return_it_where_val_is_reached(sigma_375_number_1, 300, train_mean_evaluation_reward);
-PPO_sigma_400_number_1_first_300 = return_it_where_val_is_reached(sigma_400_number_1, 300, train_mean_evaluation_reward);
+PPO_sigma_000_number_1_first_300 = return_it_where_val_is_reached(sigma_000_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_050_number_1_first_300 = return_it_where_val_is_reached(sigma_050_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_075_number_1_first_300 = return_it_where_val_is_reached(sigma_075_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_100_number_1_first_300 = return_it_where_val_is_reached(sigma_100_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_125_number_1_first_300 = return_it_where_val_is_reached(sigma_125_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_150_number_1_first_300 = return_it_where_val_is_reached(sigma_150_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_175_number_1_first_300 = return_it_where_val_is_reached(sigma_175_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_200_number_1_first_300 = return_it_where_val_is_reached(sigma_200_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_225_number_1_first_300 = return_it_where_val_is_reached(sigma_225_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_250_number_1_first_300 = return_it_where_val_is_reached(sigma_250_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_275_number_1_first_300 = return_it_where_val_is_reached(sigma_275_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_300_number_1_first_300 = return_it_where_val_is_reached(sigma_300_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_325_number_1_first_300 = return_it_where_val_is_reached(sigma_325_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_350_number_1_first_300 = return_it_where_val_is_reached(sigma_350_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_375_number_1_first_300 = return_it_where_val_is_reached(sigma_375_number_1, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_400_number_1_first_300 = return_it_where_val_is_reached(sigma_400_number_1, 300,ppo_train_mean_evaluation_reward);
 
-PPO_sigma_000_number_2_first_300 = return_it_where_val_is_reached(sigma_000_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_050_number_2_first_300 = return_it_where_val_is_reached(sigma_050_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_075_number_2_first_300 = return_it_where_val_is_reached(sigma_075_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_100_number_2_first_300 = return_it_where_val_is_reached(sigma_100_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_125_number_2_first_300 = return_it_where_val_is_reached(sigma_125_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_150_number_2_first_300 = return_it_where_val_is_reached(sigma_150_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_175_number_2_first_300 = return_it_where_val_is_reached(sigma_175_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_200_number_2_first_300 = return_it_where_val_is_reached(sigma_200_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_225_number_2_first_300 = return_it_where_val_is_reached(sigma_225_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_250_number_2_first_300 = return_it_where_val_is_reached(sigma_250_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_275_number_2_first_300 = return_it_where_val_is_reached(sigma_275_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_300_number_2_first_300 = return_it_where_val_is_reached(sigma_300_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_325_number_2_first_300 = return_it_where_val_is_reached(sigma_325_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_350_number_2_first_300 = return_it_where_val_is_reached(sigma_350_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_375_number_2_first_300 = return_it_where_val_is_reached(sigma_375_number_2, 300, train_mean_evaluation_reward);
-PPO_sigma_400_number_2_first_300 = return_it_where_val_is_reached(sigma_400_number_2, 300, train_mean_evaluation_reward);
+PPO_sigma_000_number_2_first_300 = return_it_where_val_is_reached(sigma_000_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_050_number_2_first_300 = return_it_where_val_is_reached(sigma_050_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_075_number_2_first_300 = return_it_where_val_is_reached(sigma_075_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_100_number_2_first_300 = return_it_where_val_is_reached(sigma_100_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_125_number_2_first_300 = return_it_where_val_is_reached(sigma_125_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_150_number_2_first_300 = return_it_where_val_is_reached(sigma_150_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_175_number_2_first_300 = return_it_where_val_is_reached(sigma_175_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_200_number_2_first_300 = return_it_where_val_is_reached(sigma_200_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_225_number_2_first_300 = return_it_where_val_is_reached(sigma_225_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_250_number_2_first_300 = return_it_where_val_is_reached(sigma_250_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_275_number_2_first_300 = return_it_where_val_is_reached(sigma_275_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_300_number_2_first_300 = return_it_where_val_is_reached(sigma_300_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_325_number_2_first_300 = return_it_where_val_is_reached(sigma_325_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_350_number_2_first_300 = return_it_where_val_is_reached(sigma_350_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_375_number_2_first_300 = return_it_where_val_is_reached(sigma_375_number_2, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_400_number_2_first_300 = return_it_where_val_is_reached(sigma_400_number_2, 300,ppo_train_mean_evaluation_reward);
 
-PPO_sigma_000_number_3_first_300 = return_it_where_val_is_reached(sigma_000_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_050_number_3_first_300 = return_it_where_val_is_reached(sigma_050_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_075_number_3_first_300 = return_it_where_val_is_reached(sigma_075_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_100_number_3_first_300 = return_it_where_val_is_reached(sigma_100_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_125_number_3_first_300 = return_it_where_val_is_reached(sigma_125_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_150_number_3_first_300 = return_it_where_val_is_reached(sigma_150_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_175_number_3_first_300 = return_it_where_val_is_reached(sigma_175_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_200_number_3_first_300 = return_it_where_val_is_reached(sigma_200_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_225_number_3_first_300 = return_it_where_val_is_reached(sigma_225_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_250_number_3_first_300 = return_it_where_val_is_reached(sigma_250_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_275_number_3_first_300 = return_it_where_val_is_reached(sigma_275_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_300_number_3_first_300 = return_it_where_val_is_reached(sigma_300_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_325_number_3_first_300 = return_it_where_val_is_reached(sigma_325_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_350_number_3_first_300 = return_it_where_val_is_reached(sigma_350_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_375_number_3_first_300 = return_it_where_val_is_reached(sigma_375_number_3, 300, train_mean_evaluation_reward);
-PPO_sigma_400_number_3_first_300 = return_it_where_val_is_reached(sigma_400_number_3, 300, train_mean_evaluation_reward);
+PPO_sigma_000_number_3_first_300 = return_it_where_val_is_reached(sigma_000_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_050_number_3_first_300 = return_it_where_val_is_reached(sigma_050_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_075_number_3_first_300 = return_it_where_val_is_reached(sigma_075_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_100_number_3_first_300 = return_it_where_val_is_reached(sigma_100_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_125_number_3_first_300 = return_it_where_val_is_reached(sigma_125_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_150_number_3_first_300 = return_it_where_val_is_reached(sigma_150_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_175_number_3_first_300 = return_it_where_val_is_reached(sigma_175_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_200_number_3_first_300 = return_it_where_val_is_reached(sigma_200_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_225_number_3_first_300 = return_it_where_val_is_reached(sigma_225_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_250_number_3_first_300 = return_it_where_val_is_reached(sigma_250_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_275_number_3_first_300 = return_it_where_val_is_reached(sigma_275_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_300_number_3_first_300 = return_it_where_val_is_reached(sigma_300_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_325_number_3_first_300 = return_it_where_val_is_reached(sigma_325_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_350_number_3_first_300 = return_it_where_val_is_reached(sigma_350_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_375_number_3_first_300 = return_it_where_val_is_reached(sigma_375_number_3, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_400_number_3_first_300 = return_it_where_val_is_reached(sigma_400_number_3, 300,ppo_train_mean_evaluation_reward);
 
-PPO_sigma_000_number_4_first_300 = return_it_where_val_is_reached(sigma_000_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_050_number_4_first_300 = return_it_where_val_is_reached(sigma_050_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_075_number_4_first_300 = return_it_where_val_is_reached(sigma_075_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_100_number_4_first_300 = return_it_where_val_is_reached(sigma_100_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_125_number_4_first_300 = return_it_where_val_is_reached(sigma_125_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_150_number_4_first_300 = return_it_where_val_is_reached(sigma_150_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_175_number_4_first_300 = return_it_where_val_is_reached(sigma_175_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_200_number_4_first_300 = return_it_where_val_is_reached(sigma_200_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_225_number_4_first_300 = return_it_where_val_is_reached(sigma_225_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_250_number_4_first_300 = return_it_where_val_is_reached(sigma_250_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_275_number_4_first_300 = return_it_where_val_is_reached(sigma_275_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_300_number_4_first_300 = return_it_where_val_is_reached(sigma_300_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_325_number_4_first_300 = return_it_where_val_is_reached(sigma_325_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_350_number_4_first_300 = return_it_where_val_is_reached(sigma_350_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_375_number_4_first_300 = return_it_where_val_is_reached(sigma_375_number_4, 300, train_mean_evaluation_reward);
-PPO_sigma_400_number_4_first_300 = return_it_where_val_is_reached(sigma_400_number_4, 300, train_mean_evaluation_reward);
+PPO_sigma_000_number_4_first_300 = return_it_where_val_is_reached(sigma_000_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_050_number_4_first_300 = return_it_where_val_is_reached(sigma_050_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_075_number_4_first_300 = return_it_where_val_is_reached(sigma_075_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_100_number_4_first_300 = return_it_where_val_is_reached(sigma_100_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_125_number_4_first_300 = return_it_where_val_is_reached(sigma_125_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_150_number_4_first_300 = return_it_where_val_is_reached(sigma_150_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_175_number_4_first_300 = return_it_where_val_is_reached(sigma_175_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_200_number_4_first_300 = return_it_where_val_is_reached(sigma_200_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_225_number_4_first_300 = return_it_where_val_is_reached(sigma_225_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_250_number_4_first_300 = return_it_where_val_is_reached(sigma_250_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_275_number_4_first_300 = return_it_where_val_is_reached(sigma_275_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_300_number_4_first_300 = return_it_where_val_is_reached(sigma_300_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_325_number_4_first_300 = return_it_where_val_is_reached(sigma_325_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_350_number_4_first_300 = return_it_where_val_is_reached(sigma_350_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_375_number_4_first_300 = return_it_where_val_is_reached(sigma_375_number_4, 300,ppo_train_mean_evaluation_reward);
+PPO_sigma_400_number_4_first_300 = return_it_where_val_is_reached(sigma_400_number_4, 300,ppo_train_mean_evaluation_reward);
 
 %make first vector of all the forst runs
-PPO_sigma_000_first_300 = [PPO_sigma_000_number_0_first_300, PPO_sigma_000_number_1_first_300, PPO_sigma_000_number_2_first_300, PPO_sigma_000_number_3_first_300, PPO_sigma_000_number_4_first_300];
-PPO_sigma_050_first_300 = [PPO_sigma_050_number_0_first_300, PPO_sigma_050_number_1_first_300, PPO_sigma_050_number_2_first_300, PPO_sigma_050_number_3_first_300, PPO_sigma_050_number_4_first_300];
-PPO_sigma_075_first_300 = [PPO_sigma_075_number_0_first_300, PPO_sigma_075_number_1_first_300, PPO_sigma_075_number_2_first_300, PPO_sigma_075_number_3_first_300, PPO_sigma_075_number_4_first_300];
-PPO_sigma_100_first_300 = [PPO_sigma_100_number_0_first_300, PPO_sigma_100_number_1_first_300, PPO_sigma_100_number_2_first_300, PPO_sigma_100_number_3_first_300, PPO_sigma_100_number_4_first_300];
-PPO_sigma_125_first_300 = [PPO_sigma_125_number_0_first_300, PPO_sigma_125_number_1_first_300, PPO_sigma_125_number_2_first_300, PPO_sigma_125_number_3_first_300, PPO_sigma_125_number_4_first_300];
-PPO_sigma_150_first_300 = [PPO_sigma_150_number_0_first_300, PPO_sigma_150_number_1_first_300, PPO_sigma_150_number_2_first_300, PPO_sigma_150_number_3_first_300, PPO_sigma_150_number_4_first_300];
-PPO_sigma_175_first_300 = [PPO_sigma_175_number_0_first_300, PPO_sigma_175_number_1_first_300, PPO_sigma_175_number_2_first_300, PPO_sigma_175_number_3_first_300, PPO_sigma_175_number_4_first_300];
-PPO_sigma_200_first_300 = [PPO_sigma_200_number_0_first_300, PPO_sigma_200_number_1_first_300, PPO_sigma_200_number_2_first_300, PPO_sigma_200_number_3_first_300, PPO_sigma_200_number_4_first_300];
-PPO_sigma_225_first_300 = [PPO_sigma_225_number_0_first_300, PPO_sigma_225_number_1_first_300, PPO_sigma_225_number_2_first_300, PPO_sigma_225_number_3_first_300, PPO_sigma_225_number_4_first_300];
-PPO_sigma_250_first_300 = [PPO_sigma_250_number_0_first_300, PPO_sigma_250_number_1_first_300, PPO_sigma_250_number_2_first_300, PPO_sigma_250_number_3_first_300, PPO_sigma_250_number_4_first_300];
-PPO_sigma_275_first_300 = [PPO_sigma_275_number_0_first_300, PPO_sigma_275_number_1_first_300, PPO_sigma_275_number_2_first_300, PPO_sigma_275_number_3_first_300, PPO_sigma_275_number_4_first_300];
-PPO_sigma_300_first_300 = [PPO_sigma_300_number_0_first_300, PPO_sigma_300_number_1_first_300, PPO_sigma_300_number_2_first_300, PPO_sigma_300_number_3_first_300, PPO_sigma_300_number_4_first_300];
-PPO_sigma_325_first_300 = [PPO_sigma_325_number_0_first_300, PPO_sigma_325_number_1_first_300, PPO_sigma_325_number_2_first_300, PPO_sigma_325_number_3_first_300, PPO_sigma_325_number_4_first_300];
-PPO_sigma_350_first_300 = [PPO_sigma_350_number_0_first_300, PPO_sigma_350_number_1_first_300, PPO_sigma_350_number_2_first_300, PPO_sigma_350_number_3_first_300, PPO_sigma_350_number_4_first_300];
-PPO_sigma_375_first_300 = [PPO_sigma_375_number_0_first_300, PPO_sigma_375_number_1_first_300, PPO_sigma_375_number_2_first_300, PPO_sigma_375_number_3_first_300, PPO_sigma_375_number_4_first_300];
-PPO_sigma_400_first_300 = [PPO_sigma_400_number_0_first_300, PPO_sigma_400_number_1_first_300, PPO_sigma_400_number_2_first_300, PPO_sigma_400_number_3_first_300, PPO_sigma_400_number_4_first_300];
+PPO_sigma_000_first_300 = [PPO_sigma_000_number_0_first_300, PPO_sigma_000_number_1_first_300, PPO_sigma_000_number_2_first_300, PPO_sigma_000_number_3_first_300, PPO_sigma_000_number_4_first_300]
+PPO_sigma_050_first_300 = [PPO_sigma_050_number_0_first_300, PPO_sigma_050_number_1_first_300, PPO_sigma_050_number_2_first_300, PPO_sigma_050_number_3_first_300, PPO_sigma_050_number_4_first_300]
+PPO_sigma_075_first_300 = [PPO_sigma_075_number_0_first_300, PPO_sigma_075_number_1_first_300, PPO_sigma_075_number_2_first_300, PPO_sigma_075_number_3_first_300, PPO_sigma_075_number_4_first_300]
+PPO_sigma_100_first_300 = [PPO_sigma_100_number_0_first_300, PPO_sigma_100_number_1_first_300, PPO_sigma_100_number_2_first_300, PPO_sigma_100_number_3_first_300, PPO_sigma_100_number_4_first_300]
+PPO_sigma_125_first_300 = [PPO_sigma_125_number_0_first_300, PPO_sigma_125_number_1_first_300, PPO_sigma_125_number_2_first_300, PPO_sigma_125_number_3_first_300, PPO_sigma_125_number_4_first_300]
+PPO_sigma_150_first_300 = [PPO_sigma_150_number_0_first_300, PPO_sigma_150_number_1_first_300, PPO_sigma_150_number_2_first_300, PPO_sigma_150_number_3_first_300, PPO_sigma_150_number_4_first_300]
+PPO_sigma_175_first_300 = [PPO_sigma_175_number_0_first_300, PPO_sigma_175_number_1_first_300, PPO_sigma_175_number_2_first_300, PPO_sigma_175_number_3_first_300, PPO_sigma_175_number_4_first_300]
+PPO_sigma_200_first_300 = [PPO_sigma_200_number_0_first_300, PPO_sigma_200_number_1_first_300, PPO_sigma_200_number_2_first_300, PPO_sigma_200_number_3_first_300, PPO_sigma_200_number_4_first_300]
+PPO_sigma_225_first_300 = [PPO_sigma_225_number_0_first_300, PPO_sigma_225_number_1_first_300, PPO_sigma_225_number_2_first_300, PPO_sigma_225_number_3_first_300, PPO_sigma_225_number_4_first_300]
+PPO_sigma_250_first_300 = [PPO_sigma_250_number_0_first_300, PPO_sigma_250_number_1_first_300, PPO_sigma_250_number_2_first_300, PPO_sigma_250_number_3_first_300, PPO_sigma_250_number_4_first_300]
+PPO_sigma_275_first_300 = [PPO_sigma_275_number_0_first_300, PPO_sigma_275_number_1_first_300, PPO_sigma_275_number_2_first_300, PPO_sigma_275_number_3_first_300, PPO_sigma_275_number_4_first_300]
+PPO_sigma_300_first_300 = [PPO_sigma_300_number_0_first_300, PPO_sigma_300_number_1_first_300, PPO_sigma_300_number_2_first_300, PPO_sigma_300_number_3_first_300, PPO_sigma_300_number_4_first_300]
+PPO_sigma_325_first_300 = [PPO_sigma_325_number_0_first_300, PPO_sigma_325_number_1_first_300, PPO_sigma_325_number_2_first_300, PPO_sigma_325_number_3_first_300, PPO_sigma_325_number_4_first_300]
+PPO_sigma_350_first_300 = [PPO_sigma_350_number_0_first_300, PPO_sigma_350_number_1_first_300, PPO_sigma_350_number_2_first_300, PPO_sigma_350_number_3_first_300, PPO_sigma_350_number_4_first_300]
+PPO_sigma_375_first_300 = [PPO_sigma_375_number_0_first_300, PPO_sigma_375_number_1_first_300, PPO_sigma_375_number_2_first_300, PPO_sigma_375_number_3_first_300, PPO_sigma_375_number_4_first_300]
+PPO_sigma_400_first_300 = [PPO_sigma_400_number_0_first_300, PPO_sigma_400_number_1_first_300, PPO_sigma_400_number_2_first_300, PPO_sigma_400_number_3_first_300, PPO_sigma_400_number_4_first_300]
 
 %caluclate mean
 PPO_sigma_000_first_300_mean = mean(PPO_sigma_000_first_300);
@@ -293,6 +294,133 @@ PPO_sigma_350_first_300_mean = mean(PPO_sigma_350_first_300);
 PPO_sigma_375_first_300_mean = mean(PPO_sigma_375_first_300);
 PPO_sigma_400_first_300_mean = mean(PPO_sigma_400_first_300);
 
+
+%if rows+1 exist in TRPO_theta_01_first_300, set TRPO_theta_01_first_300_mean to 0
 if sum(PPO_sigma_000_first_300 == rows+1)
     PPO_sigma_000_first_300_mean = 0;
 end
+if sum(PPO_sigma_050_first_300 == rows+1)
+    PPO_sigma_050_first_300_mean = 0;
+end
+if sum(PPO_sigma_075_first_300 == rows+1)
+    PPO_sigma_075_first_300_mean = 0;
+end
+if sum(PPO_sigma_100_first_300 == rows+1)
+    PPO_sigma_100_first_300_mean = 0;
+end
+if sum(PPO_sigma_125_first_300 == rows+1)
+    PPO_sigma_125_first_300_mean = 0;
+end
+if sum(PPO_sigma_150_first_300 == rows+1)
+    PPO_sigma_150_first_300_mean = 0;
+end
+if sum(PPO_sigma_175_first_300 == rows+1)
+    PPO_sigma_175_first_300_mean = 0;
+end
+if sum(PPO_sigma_200_first_300 == rows+1)
+    PPO_sigma_200_first_300_mean = 0;
+end
+if sum(PPO_sigma_225_first_300 == rows+1)
+    PPO_sigma_225_first_300_mean = 0;
+end
+if sum(PPO_sigma_250_first_300 == rows+1)
+    PPO_sigma_250_first_300_mean = 0;
+end
+if sum(PPO_sigma_275_first_300 == rows+1)
+    PPO_sigma_275_first_300_mean = 0;
+end
+if sum(PPO_sigma_300_first_300 == rows+1)
+    PPO_sigma_300_first_300_mean = 0;
+end
+if sum(PPO_sigma_325_first_300 == rows+1)
+    PPO_sigma_325_first_300_mean = 0;
+end
+if sum(PPO_sigma_350_first_300 == rows+1)
+    PPO_sigma_350_first_300_mean = 0;
+end
+if sum(PPO_sigma_375_first_300 == rows+1)
+    PPO_sigma_375_first_300_mean = 0;
+end
+if sum(PPO_sigma_400_first_300 == rows+1)
+    PPO_sigma_400_first_300_mean = 0;
+end
+
+%calulate the lowest iteration where the 300 is reached
+PPO_sigma_000_first_300_lowest = min(PPO_sigma_000_first_300);
+PPO_sigma_050_first_300_lowest = min(PPO_sigma_050_first_300);
+PPO_sigma_075_first_300_lowest = min(PPO_sigma_075_first_300);
+PPO_sigma_100_first_300_lowest = min(PPO_sigma_100_first_300);
+PPO_sigma_125_first_300_lowest = min(PPO_sigma_125_first_300);
+PPO_sigma_150_first_300_lowest = min(PPO_sigma_150_first_300);
+PPO_sigma_175_first_300_lowest = min(PPO_sigma_175_first_300);
+PPO_sigma_200_first_300_lowest = min(PPO_sigma_200_first_300);
+PPO_sigma_225_first_300_lowest = min(PPO_sigma_225_first_300);
+PPO_sigma_250_first_300_lowest = min(PPO_sigma_250_first_300);
+PPO_sigma_275_first_300_lowest = min(PPO_sigma_275_first_300);
+PPO_sigma_300_first_300_lowest = min(PPO_sigma_300_first_300);
+PPO_sigma_325_first_300_lowest = min(PPO_sigma_325_first_300);
+PPO_sigma_350_first_300_lowest = min(PPO_sigma_350_first_300);
+PPO_sigma_375_first_300_lowest = min(PPO_sigma_375_first_300);
+PPO_sigma_400_first_300_lowest = min(PPO_sigma_400_first_300);
+
+if PPO_sigma_000_first_300_lowest == rows+1
+    PPO_sigma_000_first_300_lowest = 0;
+end
+if PPO_sigma_050_first_300_lowest == rows+1
+    PPO_sigma_050_first_300_lowest = 0;
+end
+if PPO_sigma_075_first_300_lowest == rows+1
+    PPO_sigma_075_first_300_lowest = 0;
+end
+if PPO_sigma_100_first_300_lowest == rows+1
+    PPO_sigma_100_first_300_lowest = 0;
+end
+if PPO_sigma_125_first_300_lowest == rows+1
+    PPO_sigma_125_first_300_lowest = 0;
+end
+if PPO_sigma_150_first_300_lowest == rows+1
+    PPO_sigma_150_first_300_lowest = 0;
+end
+if PPO_sigma_175_first_300_lowest == rows+1
+    PPO_sigma_175_first_300_lowest = 0;
+end
+if PPO_sigma_200_first_300_lowest == rows+1
+    PPO_sigma_200_first_300_lowest = 0;
+end
+if PPO_sigma_225_first_300_lowest == rows+1
+    PPO_sigma_225_first_300_lowest = 0;
+end
+if PPO_sigma_250_first_300_lowest == rows+1
+    PPO_sigma_250_first_300_lowest = 0;
+end
+if PPO_sigma_275_first_300_lowest == rows+1
+    PPO_sigma_275_first_300_lowest = 0;
+end
+if PPO_sigma_300_first_300_lowest == rows+1
+    PPO_sigma_300_first_300_lowest = 0;
+end
+if PPO_sigma_325_first_300_lowest == rows+1
+    PPO_sigma_325_first_300_lowest = 0;
+end
+if PPO_sigma_350_first_300_lowest == rows+1
+    PPO_sigma_350_first_300_lowest = 0;
+end
+if PPO_sigma_375_first_300_lowest == rows+1
+    PPO_sigma_375_first_300_lowest = 0;
+end
+if PPO_sigma_400_first_300_lowest == rows+1
+    PPO_sigma_400_first_300_lowest = 0;
+end
+
+%plot the graph
+figure(2);
+hold on;
+xticks_vec=["baseline", "0.00", "0.05", "0.075", "0.10"];
+bar(xticks_vec, [ppo_first_300_mean, PPO_sigma_000_first_300_mean, PPO_sigma_050_first_300_mean, PPO_sigma_075_first_300_mean, PPO_sigma_100_first_300_mean; ppo_first_300_lowest, PPO_sigma_000_first_300_lowest, PPO_sigma_050_first_300_lowest, PPO_sigma_075_first_300_lowest, PPO_sigma_100_first_300_lowest]);
+title('Sigma impact on iteration to reach 300 mean evaluation reward');
+subtitle('If no bar is shown, the 300 mean evaluation reward was not reached');
+xlabel('sigma');
+ylabel('iterations');
+yline(ppo_first_300_mean, '--r');
+yline(ppo_standard_first_300_20_lowest, '--b');
+legend('mean', 'lowest iteration', 'baseline mean', 'baseline 20% lowest iteration');

@@ -84,3 +84,8 @@ ppo_first_300_lowest = min(ppo_first_300);
 "ppo runs that reached 300: " + length(ppo_first_300)/ppo_number_of_evals*100 + "%"
 "avg ppo runs that reached 300: " + ppo_first_300_mean
 "lowest it ppo run that reached 300: " + ppo_first_300_lowest
+
+%calulate lowes 20% of runs
+ppo_standard_first_300_std = std([ppo_first_300]);
+ppo_standard_first_300_mean = mean([ppo_first_300]);
+ppo_standard_first_300_20_lowest = prctile([ppo_first_300], 20);
