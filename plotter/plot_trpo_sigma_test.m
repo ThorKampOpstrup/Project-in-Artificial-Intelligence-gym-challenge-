@@ -142,4 +142,5 @@ ylabel('Iteration');
 yline(trpo_first_300_mean, '--');
 yline(trpo_standard_first_300_20_lowest, '--');
 legend('Mean', 'Lowest', 'baseline mean', 'baseline 20% lowest');
+legend('Location', 'northwest');
 hold off;

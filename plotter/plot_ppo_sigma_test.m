@@ -23,7 +23,7 @@ PPO_train_policy_gradient_loss = 16;
 PPO_train_std = 17;
 PPO_train_value_loss = 18; 
 
-path = "data_cpy/csv/ppo_sigma_test_theta1";
+path = "data_cpy/csv/PPO_sigma_test_theta1";
 
 sigma_000_number_0 = readmatrix(strcat(path, "/sigma_0.000_number_0.csv"));
 sigma_000_number_1 = readmatrix(strcat(path, "/sigma_0.000_number_1.csv"));
@@ -147,7 +147,7 @@ hold on;
 increments = 1/16;
 plot(iterations_vec, PPO_standad_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0, 0, 1], 'LineWidth', 2);
 
-plot(iterations_vec, sigma_000_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0+(1*increments), 1-(1*increments), 0], 'LineWidth', 2);
+%plot(iterations_vec, sigma_000_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0+(1*increments), 1-(1*increments), 0], 'LineWidth', 2);
 plot(iterations_vec, sigma_050_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0+(2*increments), 1-(2*increments), 0], 'LineWidth', 1);
 plot(iterations_vec, sigma_075_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0+(3*increments), 1-(3*increments), 0], 'LineWidth', 1);
 plot(iterations_vec, sigma_100_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0+(4*increments), 1-(4*increments), 0], 'LineWidth', 1);
@@ -164,7 +164,7 @@ plot(iterations_vec, sigma_350_avg(:,PPO_train_mean_evaluation_reward), 'Color',
 plot(iterations_vec, sigma_375_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0+(15*increments), 1-(15*increments), 0], 'LineWidth', 1);
 plot(iterations_vec, sigma_400_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0+(16*increments), 1-(16*increments), 0], 'LineWidth', 1);
 
-legend('standard', 'sigma 0.000', 'sigma 0.050', 'sigma 0.075', 'sigma 0.100', 'sigma 0.125', 'sigma 0.150', 'sigma 0.175', 'sigma 0.200', 'sigma 0.225', 'sigma 0.250', 'sigma 0.275', 'sigma 0.300', 'sigma 0.325', 'sigma 0.350', 'sigma 0.375', 'sigma 0.400');
+legend('standard', 'sigma 0.050', 'sigma 0.075', 'sigma 0.100', 'sigma 0.125', 'sigma 0.150', 'sigma 0.175', 'sigma 0.200', 'sigma 0.225', 'sigma 0.250', 'sigma 0.275', 'sigma 0.300', 'sigma 0.325', 'sigma 0.350', 'sigma 0.375', 'sigma 0.400');
 xlabel('iterations');
 ylabel('mean evaluation reward');
 title('Mean evaluation reward in PPO for different sigmas theta 1');
@@ -415,8 +415,8 @@ end
 %plot the graph
 figure(2);
 hold on;
-xticks_vec=["baseline", "0.00", "0.05", "0.075", "0.10"];
-bar(xticks_vec, [ppo_first_300_mean, PPO_sigma_000_first_300_mean, PPO_sigma_050_first_300_mean, PPO_sigma_075_first_300_mean, PPO_sigma_100_first_300_mean; ppo_first_300_lowest, PPO_sigma_000_first_300_lowest, PPO_sigma_050_first_300_lowest, PPO_sigma_075_first_300_lowest, PPO_sigma_100_first_300_lowest]);
+xticks_vec=["baseline", "0.05", "0.075", "0.10"];
+bar(xticks_vec, [ppo_first_300_mean, PPO_sigma_050_first_300_mean, PPO_sigma_075_first_300_mean, PPO_sigma_100_first_300_mean; ppo_first_300_lowest, PPO_sigma_050_first_300_lowest, PPO_sigma_075_first_300_lowest, PPO_sigma_100_first_300_lowest]);
 title('Sigma impact on iteration to reach 300 mean evaluation reward');
 subtitle('If no bar is shown, the 300 mean evaluation reward was not reached');
 xlabel('sigma');
@@ -424,3 +424,4 @@ ylabel('iterations');
 yline(ppo_first_300_mean, '--r');
 yline(ppo_standard_first_300_20_lowest, '--b');
 legend('mean', 'lowest iteration', 'baseline mean', 'baseline 20% lowest iteration');
+legend('Location', 'northwest');
