@@ -23,7 +23,7 @@ PPO_train_policy_gradient_loss = 16;
 PPO_train_std = 17;
 PPO_train_value_loss = 18; 
 
-path = "data_cpy/csv/sigma_test_theta1";
+path = "data_cpy/csv/ppo_sigma_test_theta1";
 
 sigma_000_number_0 = readmatrix(strcat(path, "/sigma_0.000_number_0.csv"));
 sigma_000_number_1 = readmatrix(strcat(path, "/sigma_0.000_number_1.csv"));

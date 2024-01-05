@@ -74,6 +74,8 @@ plot(iterations_vector, TRPO_sigma_005_mean(:,train_mean_evaluation_reward));
 plot(iterations_vector, TRPO_sigma_010_mean(:,train_mean_evaluation_reward));
 plot(iterations_vector, TRPO_sigma_020_mean(:,train_mean_evaluation_reward));
 legend('baseline', '0.01', '0.02', '0.05', '0.10', '0.20');
+legend('Location', 'northwest');
+xticks([0 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150]);
 title('TRPO: Mean Evaluation Reward vs Iterations');
 xlabel('Iterations');
 ylabel('Mean Evaluation Reward');
@@ -141,4 +143,3 @@ yline(trpo_first_300_mean, '--');
 yline(trpo_standard_first_300_20_lowest, '--');
 legend('Mean', 'Lowest', 'baseline mean', 'baseline 20% lowest');
 hold off;
-
