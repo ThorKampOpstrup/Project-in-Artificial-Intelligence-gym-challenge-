@@ -449,11 +449,12 @@ legend('Mean', 'Lowest', 'baseline 20% lowest', 'baseline mean');
 %plot PPO
 figure(4);
 xticks_vec = ["baseline" "0.1" "0.2" "0.5" "1.0" "2.0" "3.0" "5.0"];
-bar(xticks_vec, [trpo_first_300_mean, PPO_theta_01_first_300_mean, PPO_theta_02_first_300_mean, PPO_theta_05_first_300_mean, PPO_theta_1_first_300_mean, PPO_theta_2_first_300_mean, PPO_theta_3_first_300_mean, PPO_theta_5_first_300_mean;ppo_first_300_lowest, PPO_theta_01_first_300_lowest, PPO_theta_02_first_300_lowest, PPO_theta_05_first_300_lowest, PPO_theta_1_first_300_lowest, PPO_theta_2_first_300_lowest, PPO_theta_3_first_300_lowest, PPO_theta_5_first_300_lowest]);
+bar(xticks_vec, [ppo_first_300_mean, PPO_theta_01_first_300_mean, PPO_theta_02_first_300_mean, PPO_theta_05_first_300_mean, PPO_theta_1_first_300_mean, PPO_theta_2_first_300_mean, PPO_theta_3_first_300_mean, PPO_theta_5_first_300_mean;ppo_first_300_lowest, PPO_theta_01_first_300_lowest, PPO_theta_02_first_300_lowest, PPO_theta_05_first_300_lowest, PPO_theta_1_first_300_lowest, PPO_theta_2_first_300_lowest, PPO_theta_3_first_300_lowest, PPO_theta_5_first_300_lowest]);
 title('Theta value impact on PPO: Iteration to reach 300');
 subtitle('If no bar is shown, 300 was not reached, sigma=0.05');
 xlabel('Theta');
 ylabel('Iterations');
 yline(ppo_standard_first_300_20_lowest, '--r');
-yline(trpo_first_300_mean, '--b');
+yline(ppo_first_300_mean, '--b');
 legend('Mean', 'Lowest', 'baseline 20% lowest', 'baseline mean');
+legend('Location','northwest');
