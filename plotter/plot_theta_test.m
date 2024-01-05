@@ -173,7 +173,7 @@ plot(iterations_vec, TRPO_theta_5_avg(:,TRPO_train_mean_evaluation_reward), 'Col
 
 %insert horizontal line at 300 color red and title
 %yline(300, '--r', '300');
-legend('baseline', 'TRPO 0.1', 'TRPO 0.2', 'TRPO 0.5', 'TRPO 1.0', 'TRPO 2.0', 'TRPO 3.0', 'TRPO 5.0');
+legend('baseline', 'Theta 0.1', 'Theta 0.2', 'Theta 0.5', 'Theta 1.0', 'Theta 2.0', 'Theta 3.0', 'Theta 5.0');
 title('Theta value impact on TRPO');
 subtitle('Green higher theta, red lower theta');
 xticks([0 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150]);
@@ -185,7 +185,7 @@ hold off;
 
 figure(2);
 hold on;
-plot(iterations_vec, ppo_standad_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0, 0, 1]);
+plot(iterations_vec, PPO_standad_avg(:,PPO_train_mean_evaluation_reward), 'Color', [0, 0, 1]);
 plot(iterations_vec, PPO_theta_01_avg(:,PPO_train_mean_evaluation_reward), 'Color', [1-(1*increments), 0+(1*increments), 0]);
 plot(iterations_vec, PPO_theta_02_avg(:,PPO_train_mean_evaluation_reward), 'Color', [1-(2*increments), 0+(2*increments), 0]);
 plot(iterations_vec, PPO_theta_05_avg(:,PPO_train_mean_evaluation_reward), 'Color', [1-(3*increments), 0+(3*increments), 0]);
@@ -200,7 +200,7 @@ subtitle('Green higher theta, red lower theta');
 xticks([0 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150]);
 xlabel('Iterations');
 ylabel('Mean Evaluation Reward');
-legend('baseline', 'PPO 0.1', 'PPO 0.2', 'PPO 0.5', 'PPO 1.0', 'PPO 2.0', 'PPO 3.0', 'PPO 5.0');
+legend('baseline', 'Theta 0.1', 'Theta 0.2', 'Theta 0.5', 'Theta 1.0', 'Theta 2.0', 'Theta 3.0', 'Theta 5.0');
 %place legend top left corner
 legend('Location','northwest');
 hold off;
