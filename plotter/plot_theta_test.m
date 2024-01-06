@@ -445,6 +445,7 @@ ylabel('Iterations');
 yline(trpo_standard_first_300_20_lowest, '--r');
 yline(trpo_first_300_mean, '--b');
 legend('Mean', 'Lowest', 'baseline 20% lowest', 'baseline mean');
+legend('Location','southeast');
 
 %plot PPO
 figure(4);
@@ -457,4 +458,4 @@ ylabel('Iterations');
 yline(ppo_standard_first_300_20_lowest, '--r');
 yline(ppo_first_300_mean, '--b');
 legend('Mean', 'Lowest', 'baseline 20% lowest', 'baseline mean');
-legend('Location','northwest');
+legend('Location','southeast');

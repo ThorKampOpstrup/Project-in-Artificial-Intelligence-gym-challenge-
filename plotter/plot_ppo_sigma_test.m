@@ -424,4 +424,4 @@ ylabel('iterations');
 yline(ppo_first_300_mean, '--r');
 yline(ppo_standard_first_300_20_lowest, '--b');
 legend('mean', 'lowest iteration', 'baseline mean', 'baseline 20% lowest iteration');
-legend('Location', 'northeast');
+legend('Location', 'southeast');

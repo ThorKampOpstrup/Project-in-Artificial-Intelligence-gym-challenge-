@@ -54,7 +54,7 @@ TRPO_sigma_020_number_2 = readmatrix(strcat(path, "TRPO_sigma_0.200_number_2.csv
 TRPO_sigma_020_number_3 = readmatrix(strcat(path, "TRPO_sigma_0.200_number_3.csv"));
 TRPO_sigma_020_number_4 = readmatrix(strcat(path, "TRPO_sigma_0.200_number_4.csv"));
 
-%takle the mean of all
+%take the mean of all
 TRPO_sigma_001_mean = (TRPO_sigma_001_number_0 + TRPO_sigma_001_number_1 + TRPO_sigma_001_number_2 + TRPO_sigma_001_number_3 + TRPO_sigma_001_number_4)/5;
 TRPO_sigma_002_mean = (TRPO_sigma_002_number_0 + TRPO_sigma_002_number_1 + TRPO_sigma_002_number_2 + TRPO_sigma_002_number_3 + TRPO_sigma_002_number_4)/5;
 TRPO_sigma_005_mean = (TRPO_sigma_005_number_0 + TRPO_sigma_005_number_1 + TRPO_sigma_005_number_2 + TRPO_sigma_005_number_3 + TRPO_sigma_005_number_4)/5;
@@ -76,7 +76,7 @@ plot(iterations_vector, TRPO_sigma_020_mean(:,train_mean_evaluation_reward));
 legend('baseline', '0.01', '0.02', '0.05', '0.10', '0.20');
 legend('Location', 'northwest');
 xticks([0 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150]);
-title('TRPO: Mean Evaluation Reward vs Iterations');
+title('TRPO: Sigma impact on mean evaluation reward');
 xlabel('Iterations');
 ylabel('Mean Evaluation Reward');
 hold off;
