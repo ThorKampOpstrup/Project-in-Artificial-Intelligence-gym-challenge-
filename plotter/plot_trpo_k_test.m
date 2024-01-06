@@ -1,5 +1,5 @@
-clear;
-close all;
+%clear;
+%close all;
 
 addpath('plotter/');
 load_avg_standard_trpo
