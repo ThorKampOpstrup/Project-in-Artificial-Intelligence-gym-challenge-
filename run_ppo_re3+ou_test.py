@@ -26,10 +26,10 @@ for j in range(0,number_of_equal_runs):
     print('subdir: ' + subdir + ' log_name: ' + log_name)
     command = [python_interpreter, path+'main.py', '--use_ppo', 'True', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta), '--re3_k', str(k)]
 
-    # subprocess.run(command)
+    subprocess.run(command)
     
-    # # push to git
-    # subprocess.run(['git', 'pull'])
-    # subprocess.run(['git', 'add', '-A'])
-    # subprocess.run(['git', 'commit', '-m', 'Automated push: Test for combined'])
-    # subprocess.run(['git', 'push'])
+    # push to git
+    subprocess.run(['git', 'pull'])
+    subprocess.run(['git', 'add', '-A'])
+    subprocess.run(['git', 'commit', '-m', 'Automated push: Test for combined'])
+    subprocess.run(['git', 'push'])
