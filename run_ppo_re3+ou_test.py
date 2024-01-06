@@ -21,6 +21,7 @@ data_path = 'data'
 subdir = 'PPO_Re3_OU_test'
 base_log_name = 'PPO_k_' + k + '_sigma_' + sigma + '_theta_' + theta
 
+#!update range
 for j in range(4,number_of_equal_runs):
     log_name = base_log_name + '_number_' + str(j)
     print('subdir: ' + subdir + ' log_name: ' + log_name)
