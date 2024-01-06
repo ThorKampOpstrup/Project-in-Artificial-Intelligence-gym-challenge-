@@ -10,7 +10,7 @@ theta = str(5)
 sigma = str(0.05)
 k = str(1000)
 
-iterations = str(5)
+iterations = str(2)
 
 number_of_equal_runs = 10
 
