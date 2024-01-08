@@ -5,23 +5,26 @@ load_avg_standard_ppo;
 
 number_of_evals = 20;
 
-PPO_step = 1;
-PPO_rollout_ep_len_mean = 2;
-PPO_rollout_ep_rew_mean = 3;
-PPO_time_fps = 4;
-PPO_train_beta = 5;
-PPO_train_fitness_score = 6;
-PPO_train_mean_episodic_Re3_reward = 7;
-PPO_train_mean_evaluation_length = 8;
-PPO_train_mean_evaluation_reward = 9;
-PPO_train_real_mean_ep_len = 10;
-PPO_train_explained_variance = 11;
-PPO_train_is_line_search_success = 12;
-PPO_train_kl_divergence_loss = 13;
-PPO_train_learning_rate = 14;
-PPO_train_policy_objective = 15;
-PPO_train_std = 16;
-PPO_train_value_loss = 17;
+step = 1;
+rollout_ep_len_mean = 2;
+rollout_ep_rew_mean = 3;
+time_fps = 4;
+train_beta = 5;
+train_fitness_score = 6;
+train_mean_episodic_Re3_reward = 7;
+train_mean_evaluation_length = 8;
+train_mean_evaluation_reward = 9;
+train_real_mean_ep_len = 10;
+train_approx_kl = 11;
+train_clip_fraction = 12;
+train_clip_range = 13;
+train_entropy_loss = 14;
+train_explained_variance = 15;
+train_learning_rate = 16;
+train_loss = 17;
+train_policy_gradient_loss = 18;
+train_std = 19;
+train_value_loss = 20;
 
 path = "data_cpy/csv/PPO_Re3_OU_test/";
 
