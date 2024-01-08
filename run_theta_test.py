@@ -1,10 +1,10 @@
 import subprocess
 import numpy as np
 
-subprocess.run(['git', 'pull'])
-subprocess.run(['git', 'add', '-A'])
-subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma'])
-subprocess.run(['git', 'push'])
+# subprocess.run(['git', 'pull'])
+# subprocess.run(['git', 'add', '-A'])
+# subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma'])
+# subprocess.run(['git', 'push'])
 
 print('Running theta test')
 sigma = str(0.05)
@@ -40,10 +40,10 @@ for j in range(0,number_of_equal_runs):
         subprocess.run(command)
         
         #push to git
-        subprocess.run(['git', 'pull'])
-        subprocess.run(['git', 'add', '-A'])
-        subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma = ' + str(sigma) + ' number ' + str(j)])
-        subprocess.run(['git', 'push'])
+        # subprocess.run(['git', 'pull'])
+        # subprocess.run(['git', 'add', '-A'])
+        # subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma = ' + str(sigma) + ' number ' + str(j)])
+        # subprocess.run(['git', 'push'])
 
 
 #####RUN PPO
@@ -69,7 +69,7 @@ for j in range(0,number_of_equal_runs):
         subprocess.run(command)
         
         #push to git
-        subprocess.run(['git', 'pull'])
-        subprocess.run(['git', 'add', '-A'])
-        subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma = ' + str(sigma) + ' number ' + str(j)])
-        subprocess.run(['git', 'push'])
+        # subprocess.run(['git', 'pull'])
+        # subprocess.run(['git', 'add', '-A'])
+        # subprocess.run(['git', 'commit', '-m', 'Automated push: Test for sigma = ' + str(sigma) + ' number ' + str(j)])
+        # subprocess.run(['git', 'push'])

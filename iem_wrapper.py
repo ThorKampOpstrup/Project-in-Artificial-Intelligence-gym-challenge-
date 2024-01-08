@@ -4,15 +4,12 @@ from gymnasium.core import Env
 import torch
 
 import numpy as np
-# from dataPlotter import DataPlotter
 
 
-
-class IEMWrapper(gym.Wrapper):
-    def __init__(self, env: Env, iem, encoder):
-        super(IEMWrapper, self).__init__(env)
+class Wrapper(gym.Wrapper):
+    def __init__(self, env: Env, encoder):
+        super(Wrapper, self).__init__(env)
         # Add other initial stuff here
-        # self.IEMplotter = DataPlotter("Novelty reward (no weight)", "Mini-batch", "Novelty score")
         # self.input_dim = (n_states, obs_space)  #should be an array where [0] and [1] are the sizes
 
         self.state_pair = []    # A rolling buffer of two subsequent states
@@ -25,9 +22,6 @@ class IEMWrapper(gym.Wrapper):
         self.dist_est_list_mean_list = []
         self.mean_ep_len = []
         self.n_steps = 0
-
-        self.IEMModule = iem   
-        self.IEM_active = False
 
         self.beta_start = 1
         self.decay_rate = 0.01
@@ -58,9 +52,6 @@ class IEMWrapper(gym.Wrapper):
         self.n_steps += 1
         custom_reward = 0
         if len(self.state_pair) == 2:   # comment this section out to use generic PPO
-            # if self.IEM_active:
-            #     custom_reward = self.intrinsic_reward(self.state_pair)
-
             self.state_pair.pop(0)
 
         if done or truncated:
@@ -83,7 +74,7 @@ class IEMWrapper(gym.Wrapper):
         input_states = np.concatenate([obs_pair[0], obs_pair[1]])
         # print(input_states)
         input_tensor = torch.tensor(input_states, dtype=torch.float32)#.unsqueeze(0)
-        predicted_steps = self.IEMModule(input_tensor).detach().item()
+        # predicted_steps = self.IEMModule(input_tensor).detach().item()
         beta = self.beta_start * (1 - self.decay_rate) ** self.current_it
         ir = beta * predicted_steps
         # ir = (ir - 1) / (10 - 1 + 1e-8)

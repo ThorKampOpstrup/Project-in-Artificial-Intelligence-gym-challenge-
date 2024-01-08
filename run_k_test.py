@@ -6,8 +6,6 @@ number_of_equal_runs = 5
 python_interpreter = '/home/thops19/Documents/9semester/PPO-for-Beginners/venv/bin/python'
 data_path = 'data'
 
-
-
 # # Run the test for different k values
 subdir = 'k_test_100-1000'
 base_log_name = 'k_'
@@ -21,10 +19,10 @@ for j in range(number_of_equal_runs):
         command = [python_interpreter, 'iem-ppo.py', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--re3_k', str(k),'--it', '200', '--n_steps', '2024']
         subprocess.run(command)
         
-        subprocess.run(['git', 'pull'])
-        subprocess.run(['git', 'add', '-A'])
-        subprocess.run(['git', 'commit', '-m', 'Automated push: Test for k_test = ' + str(k) + ' number ' + str(j)])
-        subprocess.run(['git', 'push'])
+        # subprocess.run(['git', 'pull'])
+        # subprocess.run(['git', 'add', '-A'])
+        # subprocess.run(['git', 'commit', '-m', 'Automated push: Test for k_test = ' + str(k) + ' number ' + str(j)])
+        # subprocess.run(['git', 'push'])
 
 
 
