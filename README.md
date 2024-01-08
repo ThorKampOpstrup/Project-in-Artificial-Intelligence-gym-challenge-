@@ -16,7 +16,7 @@ It is recommended to use a virtual environment or wrapper such as conda.
 Insert files from SB3_modified_files into your corresponding SB3 installation.
 
 ## File and Folder Content Description
-Examine plotter/plots/README.md for a plots of all findings. Read report.pdf for a more detailed description of the project. TODO: add link to report.pdf????????????????????????????????
+Examine plotter/plots/README.md for a plots of all findings. 
 
 ### Python Scripts
 - **main.py**: 
@@ -45,12 +45,7 @@ Examine plotter/plots/README.md for a plots of all findings. Read report.pdf for
 ### Additional Documentation
 - **plotter/plots/README.md**: 
   - Provides a visual representation and documentation of all the generated plots.
-
-## Acknowledgments
-Fyldes eller slettes
-
-cite articles
-
+  
 ## Authors
 - Benjamin Longet Birk
 - Thor Kamp Opstrup
