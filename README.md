@@ -1,5 +1,6 @@
 # Project-in-Artificial-Intelligence (gym-challenge)
-This project is an attempt to complete the gym challenge by modifying PPO and TRPO with Re3 and Ornstein-Uhlenbeck action noise.
+This project is an attempt to complete the gym challenge by modifying PPO and TRPO with Re3 and Ornstein-Uhlenbeck action noise. The project is a part of the course elective course at the University of Southern Denmark(SDU). This git is suplementary to the report and contains the code used to generate the plots in the report. Enjoy!
+
 ![plotter/plots/example.gif](plotter/plots/example.gif)
 ![plotter/plots/plot_1.png](plotter/plots/combined.png)
 
@@ -45,7 +46,7 @@ Examine plotter/plots/README.md for a plots of all findings.
 ### Additional Documentation
 - **plotter/plots/README.md**: 
   - Provides a visual representation and documentation of all the generated plots.
-  
+
 ## Authors
 - Benjamin Longet Birk
 - Thor Kamp Opstrup
