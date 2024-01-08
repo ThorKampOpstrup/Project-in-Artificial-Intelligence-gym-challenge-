@@ -5,7 +5,6 @@ This project is an attempt to complete the gym challenge by modifying PPO and TR
 ![plotter/plots/plot_1.png](plotter/plots/combined.png)
 
 
-
 ## Getting Started
 Make sure to have python >=3.10.12 installed and:
 ```bash

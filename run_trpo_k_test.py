@@ -3,7 +3,7 @@ import numpy as np
 
 number_of_equal_runs = 5
 
-python_interpreter = '/home/thops19/Documents/9semester/PPO-for-Beginners/venv/bin/python'
+python_interpreter = #!INSERT PATH TO PYTHON INTERPRETER HERE
 data_path = 'data'
 iterations = str(150)
 
@@ -22,10 +22,10 @@ for j in range(0,number_of_equal_runs):
         subprocess.run(command)
         
         # push to git
-        subprocess.run(['git', 'pull'])
-        subprocess.run(['git', 'add', '-A'])
-        subprocess.run(['git', 'commit', '-m', 'Automated push: Test for k_test = ' + str(k) + ' number ' + str(j)])
-        subprocess.run(['git', 'push'])
+        # subprocess.run(['git', 'pull'])
+        # subprocess.run(['git', 'add', '-A'])
+        # subprocess.run(['git', 'commit', '-m', 'Automated push: Test for k_test = ' + str(k) + ' number ' + str(j)])
+        # subprocess.run(['git', 'push'])
     
 
 base_log_name = 'TRPO_k_'
@@ -39,8 +39,8 @@ for j in range(0,number_of_equal_runs):
         subprocess.run(command)
         
         # push to git
-        subprocess.run(['git', 'pull'])
-        subprocess.run(['git', 'add', '-A'])
-        subprocess.run(['git', 'commit', '-m', 'Automated push: Test for k_test = ' + str(k) + ' number ' + str(j)])
-        subprocess.run(['git', 'push'])
+        # subprocess.run(['git', 'pull'])
+        # subprocess.run(['git', 'add', '-A'])
+        # subprocess.run(['git', 'commit', '-m', 'Automated push: Test for k_test = ' + str(k) + ' number ' + str(j)])
+        # subprocess.run(['git', 'push'])
         

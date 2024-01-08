@@ -3,7 +3,7 @@ import numpy as np
 
 number_of_equal_runs = 5
 
-python_interpreter = '/home/thops19/Documents/9semester/PPO-for-Beginners/venv/bin/python'
+python_interpreter = #!INSERT PATH TO PYTHON INTERPRETER HERE
 data_path = 'data'
 
 # # Run the test for different k values

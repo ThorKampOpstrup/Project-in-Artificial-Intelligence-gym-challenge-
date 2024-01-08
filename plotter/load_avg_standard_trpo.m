@@ -1,17 +1,5 @@
 addpath("plotter/");
 
-%function [row] = return_it_where_val_is_reached(matrix, value, column)
-%    rows = size(matrix, 1);
-%    for i = 1:rows
-%        if matrix(i, column) >= value
-%            row = i;
-%            return
-%        end
-%    end
-%    row = rows+1;
-%    return
-%end
-
 trpo_number_of_evals = 20;
 
 trpo_step = 1;

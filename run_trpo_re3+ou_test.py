@@ -14,7 +14,7 @@ iterations = str(150)
 
 number_of_equal_runs = 20
 
-python_interpreter = '/home/thops19/Documents/9semester/PPO-for-Beginners/venv/bin/python'
+python_interpreter = #!INSERT PATH TO PYTHON INTERPRETER HERE
 path = '/home/thops19/Documents/9semester/Project-in-Artificial-Intelligence-gym-challenge-/'
 data_path = 'data'
 
