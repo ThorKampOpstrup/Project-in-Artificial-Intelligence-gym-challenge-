@@ -57,10 +57,12 @@ PPO_Re3_OU_test_mean =(run1 + run2 + run3 + run4 + run5 + run6 + run7 + run8 + r
 figure(1);
 hold on;
 plot(iterations_vec, PPO_Re3_OU_test_mean(:, PPO_train_mean_evaluation_reward), 'LineWidth', 1);
-plot(iterations_vec, ppo_standad_avg(:, ppo_train_mean_evaluation_reward), 'LineWidth', 1);
+plot(iterations_vec, PPO_standad_avg(:, ppo_train_mean_evaluation_reward), 'LineWidth', 1);
 legend("PPO Re3 OU test", "PPO standard");
+legend("Location", "southeast");
 xlabel("Iterations");
 ylabel("Mean evaluation reward");
+xticks([0 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150]);
 title("PPO Re3 OU test vs PPO standard");
 hold off;
 
@@ -85,8 +87,8 @@ run18_first_300 = return_it_where_val_is_reached(run18, 300, PPO_train_mean_eval
 run19_first_300 = return_it_where_val_is_reached(run19, 300, PPO_train_mean_evaluation_reward);
 run20_first_300 = return_it_where_val_is_reached(run20, 300, PPO_train_mean_evaluation_reward);
 
-PPO_Re3_OU_first_300 = [run1_first_300, run2_first_300, run3_first_300, run4_first_300, run5_first_300, run6_first_300, run7_first_300, run8_first_300, run9_first_300, run10_first_300, run11_first_300, run12_first_300, run13_first_300, run14_first_300, run15_first_300, run16_first_300, run17_first_300, run18_first_300, run19_first_300, run20_first_300];
-%PPO_Re3_OU_first_300 = PPO_Re3_OU_first_300(PPO_Re3_OU_first_300 ~= rows+1);
+PPO_Re3_OU_first_300 = [run1_first_300, run2_first_300, run3_first_300, run4_first_300, run5_first_300, run6_first_300, run7_first_300, run8_first_300, run9_first_300, run10_first_300, run11_first_300, run12_first_300, run13_first_300, run14_first_300, run15_first_300, run16_first_300, run17_first_300, run18_first_300, run19_first_300, run20_first_300]
+PPO_Re3_OU_first_300 = PPO_Re3_OU_first_300(PPO_Re3_OU_first_300 ~= rows+1);
 
 PPO_Re3_OU_first_300_mean = mean(PPO_Re3_OU_first_300);
 PPO_Re3_OU_first_300_lowest = min(PPO_Re3_OU_first_300);

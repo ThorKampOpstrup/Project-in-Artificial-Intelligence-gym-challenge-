@@ -56,8 +56,10 @@ hold on;
 plot(iterations_vec, TRPO_Re3_OU_test_mean(:, TRPO_train_mean_evaluation_reward), 'LineWidth', 1);
 plot(iterations_vec, trpo_standad_avg(:, trpo_train_mean_evaluation_reward), 'LineWidth', 1);
 legend("TRPO Re3 OU test", "TRPO standard");
+legend("Location", "southeast");
 xlabel("Iterations");
 ylabel("Mean evaluation reward");
+xticks([0 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150]);
 title("TRPO Re3 OU test vs TRPO standard");
 hold off;
 
