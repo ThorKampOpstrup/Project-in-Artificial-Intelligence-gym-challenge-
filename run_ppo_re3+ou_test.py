@@ -12,7 +12,8 @@ k = str(200)
 
 iterations = str(150)
 
-number_of_equal_runs = 20
+#!update range
+number_of_equal_runs = 4
 
 python_interpreter = '/home/thops19/Documents/9semester/PPO-for-Beginners/venv/bin/python'
 path = '/home/thops19/Documents/9semester/Project-in-Artificial-Intelligence-gym-challenge-/'
@@ -22,7 +23,7 @@ subdir = 'PPO_Re3_OU_test'
 base_log_name = 'PPO_k_' + k + '_sigma_' + sigma + '_theta_' + theta
 
 #!update range
-for j in range(4,number_of_equal_runs):
+for j in range(3,number_of_equal_runs):
     log_name = base_log_name + '_number_' + str(j)
     print('subdir: ' + subdir + ' log_name: ' + log_name)
     command = [python_interpreter, path+'main.py', '--use_ppo', 'True', '--path', data_path,'--subdir', subdir, '--log_name', log_name, '--it', iterations, '--n_steps', '1024', '--sigma', str(sigma), '--theta', str(theta), '--re3_k', str(k)]
