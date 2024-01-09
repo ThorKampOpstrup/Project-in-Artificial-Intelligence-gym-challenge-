@@ -66,23 +66,7 @@ class Wrapper(gym.Wrapper):
             self.dist_est_list = []
             self.fitlist = []
 
-        return obs, custom_reward + reward, done, truncated, info
-
-    def intrinsic_reward(self, obs_pair):
-        # Estimer afstanden mellem to states (de vil altid være 1 men hvis den tror der er mere betyder det at den udforsker)
-        # print(obs_pair)
-        input_states = np.concatenate([obs_pair[0], obs_pair[1]])
-        # print(input_states)
-        input_tensor = torch.tensor(input_states, dtype=torch.float32)#.unsqueeze(0)
-        # predicted_steps = self.IEMModule(input_tensor).detach().item()
-        beta = self.beta_start * (1 - self.decay_rate) ** self.current_it
-        ir = beta * predicted_steps
-        # ir = (ir - 1) / (10 - 1 + 1e-8)
-        beta = self.beta_start * (1 - self.decay_rate) ** self.current_it
-        self.dist_est_list.append(ir)
-
-        return ir
-    
+        return obs, custom_reward + reward, done, truncated, info    
 
     def get_fit(self):
         self.IEM_active = True

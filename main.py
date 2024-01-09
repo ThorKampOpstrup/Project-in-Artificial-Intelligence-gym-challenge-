@@ -164,10 +164,8 @@ from multiprocessing import freeze_support
 import gymnasium as gym
 from stable_baselines3 import PPO
 from sb3_contrib import TRPO
-# Noise class for TD3
-# from stable_baselines3.common.noise import NormalActionNoise, OrnsteinUhlenbeckActionNoise
 import os
-from iem_wrapper import IEMWrapper
+from wrapper import Wrapper
 from stable_baselines3.common.env_util import make_vec_env
 from stable_baselines3.common.vec_env import SubprocVecEnv
 import torch
@@ -175,7 +173,6 @@ import numpy as np
 from stable_baselines3.common.monitor import Monitor
 import time
 from multiprocessing import Pool
-# from iem import IEMModule 
 from re3 import RandomEncoder
 import argparse
 from customCallBack import CustomCallback
@@ -250,7 +247,6 @@ if __name__ == '__main__':
     env.close()
     
     iem_hidden_size = 64
-    # iem_module = IEMModule(obs_space, iem_hidden_size)
     re3_module = RandomEncoder(obs_space, 128)
 
     # model_name = f'{args.log_dir}_k{args.re3_k}'    # missing sigma since floats are bad for file names...
@@ -268,7 +264,7 @@ if __name__ == '__main__':
     # n_steps_per_core = int(n_steps_per_update // n_env) # PPO needs this one
     freeze_support()
     env_name = args.env_name
-    env_fns = [lambda: Monitor(IEMWrapper(gym.make(env_name), re3_module)) for _ in range(n_env)]
+    env_fns = [lambda: Monitor(Wrapper(gym.make(env_name), re3_module)) for _ in range(n_env)]
     env = SubprocVecEnv(env_fns)
     
     if type == 'PPO':
