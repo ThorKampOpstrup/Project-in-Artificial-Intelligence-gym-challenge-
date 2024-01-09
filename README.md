@@ -62,5 +62,5 @@ Study plot in on [plotter/plots/README.md](plotter/plots/README.md) for more det
 
 
 ## Authors
-- Benjamin Longet Birk
+- Benjamin Birk Longet
 - Thor Kamp Opstrup
