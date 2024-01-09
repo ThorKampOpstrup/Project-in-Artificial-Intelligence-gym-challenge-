@@ -46,6 +46,16 @@ Examine plotter/plots/README.md for a plots of all findings.
 - **plotter/plots/README.md**: 
   - Provides a visual representation and documentation of all the generated plots.
 
+### Achievements
+|                  	| PPO    	| TRPO  	| PPO+OU                   	| TRPO+OU                                  	| PPO+Re3 	| TRPO+Re3                 	| PPO+OU+Re3                 	| TRPO+OU+Re3                 	|
+|------------------	|--------	|-------	|--------------------------	|------------------------------------------	|---------	|--------------------------	|----------------------------	|-----------------------------	|
+| Runs             	| 20     	| 20    	| 5                        	| 5                                        	| 5       	| 5                        	| 20                         	| 20                          	|
+| Hyper-parameters 	|        	|       	| σ = 0.05, θ = 1  	| best(σ=0.5) mean(σ=0.02) θ=1 	| k=200   	| best(k=500) mean(k=1000) 	| k=200, σ=0.02, θ=1 	| K=1000, σ=0.02, θ=5 	|
+| Lowest/best      	| 58     	| 58    	| 102                      	| 57                                       	| 76      	| 60                       	| 77                         	| 60                          	|
+| Mean             	| 113.39 	| 84.60 	| 124.8                    	| 77.2                                     	| 111.4   	| 74.6                     	| 116.5                      	| 87.25                       	|
+
+Study plot in on [plotter/plots/README.md](plotter/plots/README.md) for more details.
+
 ## Authors
 - Benjamin Longet Birk
 - Thor Kamp Opstrup
