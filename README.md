@@ -1,5 +1,5 @@
 # Project-in-Artificial-Intelligence (gym-challenge)
-This project is an attempt to complete the Bipedal Walker gym challenge by modifying PPO and TRPO with Re3 and Ornstein-Uhlenbeck action noise. The repository is a part of the course Project in Artificial Intelligence at the University of Southern Denmark(SDU). This git is suplementary to the report and contains the code used to generate the plots in the report. Enjoy!
+This project is an attempt to complete the Bipedal Walker gym challenge by modifying PPO and TRPO with Re3 and Ornstein-Uhlenbeck action noise. The repository is a part of the course Project in Artificial Intelligence at the University of Southern Denmark(SDU). This git is suplementary to the report and contains the code used to generate the plots in the report. The report can be read in [Report.pdf](Report.pdf), enjoy!
 
 <!-- ![plotter/plots/example.gif](plotter/plots/example.gif) -->
 <img src="/plotter/plots/example.gif" alt="image" style="width:300px;height:auto;"> 
@@ -28,6 +28,11 @@ Insert files from SB3_modified_files into your corresponding SB3 installation.
 Study plot in on [plotter/plots/README.md](plotter/plots/README.md) for more details.
 
 ## File and Folder Content Description
+
+### Report
+- **[Report.pdf](Report.pdf)**: 
+  - The report for the project.
+
 ### Python Scripts
 - **[main.py](main.py)**: 
   - The primary script to run configurations with different hyperparameters.
