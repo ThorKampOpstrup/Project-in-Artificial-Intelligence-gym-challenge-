@@ -59,6 +59,8 @@ Study plot in on [plotter/plots/README.md](plotter/plots/README.md) for more det
 ### Additional Documentation
 - **[plotter/plots/README.md](plotter/plots/README.md)**: 
   - Provides a visual representation and documentation of all the generated plots.
+- **[plotter/plots/Re3_ex/README.md](plotter/plots/Re3_ex/README.md)**:
+  - Provides a visual representation and documentation of the Re3 reward and mean evaluation.
 
 
 ## Authors
